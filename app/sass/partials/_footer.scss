@@ -1,0 +1,17 @@
+.footer{
+    background-color: #151515;
+    .copyright{
+        color: #373129;
+        margin-top: 20px;
+        text-align: center;
+        @include tablet{
+            text-align: left;
+        }
+    }
+
+    .container{
+        padding: 27px 0;
+    }
+
+
+}
