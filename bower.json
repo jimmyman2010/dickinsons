@@ -9,6 +9,7 @@
     "jquery": "*",
     "magnific-popup": "*",
     "malihu-custom-scrollbar-plugin": "*",
-    "jquery-validation": "*"
+    "jquery-validation": "*",
+    "components-font-awesome": "^4.6.3"
   }
 }
