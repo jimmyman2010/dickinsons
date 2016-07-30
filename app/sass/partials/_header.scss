@@ -1,3 +1,33 @@
+
+.blue-template{
+    .site-header {
+        .site-menu {
+            background-color: #bcdafc;
+            .bar {
+                background-color: $color-blue;
+            }
+
+            .item {
+                > a {
+                    color: #0057ae;
+                    &.active, &:hover{
+                        color: #01529c;
+                    }
+                }
+            }
+
+            .blue-label{
+                a{
+                    color: white;
+                    &:hover{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .site-header{
     padding-top: 30px;
     .logo{
@@ -14,6 +44,7 @@
             color: #00367c;
             margin: 5px 0;
             font-size: 18px;
+            font-weight: 700;
         }
         div{
             font-weight: 700;
@@ -51,6 +82,9 @@
         li{
             display: inline-block;
             margin-left: 10px;
+            a{
+                color: #42403a;
+            }
         }
     }
 
@@ -75,13 +109,15 @@
             @include clearfix;
         }
         .item{
+            position: relative;
             float: left;
-            padding: 12px 6px;
+            padding: 12px 5px;
             font-size: 14px;
+            font-weight: 600;
             &:first-child{
                 padding-left: 0;
             }
-            a{
+            > a{
                 display: inline-block;
                 height: 30px;
                 line-height: 30px;
@@ -97,7 +133,47 @@
             }
             .button{
                 font-size: 14px;
+                font-weight: 400;
                 padding: 0 9px;
+            }
+
+            &:hover .sub-menu{
+                //display: block;
+                @include opacity(1);
+                height: auto;
+            }
+            .sub-menu{
+                font-weight: 400;
+                //display: none;
+                z-index: 1000;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                width: 212px;
+                padding: 10px;
+                @include border-radius(0 0 10px 10px);
+                @include opacity(0);
+                height: 0;
+                overflow: hidden;
+                @include transition(all 0.3s);
+                background-color: #988675;
+
+                li{
+                    border-top: 1px solid rgba(255,255,255,0.2);
+                    &:first-child{
+                        border-top: none;
+                    }
+                }
+                a{
+                    display: block;
+                    padding: 10px;
+                    @include border-radius(10px);
+                    color: #fff;
+                    &:hover{
+                        background-color: rgba(255,255,255,0.1);
+                        text-decoration: none;
+                    }
+                }
             }
         }
         .yellow-label{
@@ -116,9 +192,15 @@
                 bottom: 100%;
             }
             a{
-                color: #2b3367;
                 &:hover{
                     background-color: transparent;
+                    color: white;
+                }
+            }
+            .sub-menu{
+                background-color: $color-yellow;
+                a{
+                    color: #564e44;
                 }
             }
         }
@@ -143,7 +225,12 @@
                     color: white;
                 }
             }
+            .sub-menu{
+                background-color: $color-blue;
+            }
         }
+
+
 
     }
 }

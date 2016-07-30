@@ -1,3 +1,16 @@
+.blue-template{
+    a{
+        color: #0372be;
+    }
+    .site-title {
+        border-bottom: 1px solid #8ec0e1;
+        @include box-shadow(0 1px 0 #2a89c7);
+        .title {
+            color: #0970c1;
+        }
+    }
+}
+
 .site-main{
     min-height: 400px;
 }
@@ -34,7 +47,7 @@
         font-family: $font-monarcha;
         color: #063f78;
         text-align: center;
-        font-size: 44px;
+        font-size: 38px;
         line-height: 1;
         margin: 0;
 

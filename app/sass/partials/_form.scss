@@ -153,7 +153,7 @@
 .button{
     display: inline-block;
     outline: none;
-    color: #fff;
+    color: #fff !important;
     height: 40px;
     line-height: 36px;
     font-size: 18px;
@@ -176,15 +176,24 @@
 
 .button--red{
     border: 1px solid #f14409;
-    background-color: #f15a23;
+    background-color: #f15a23 !important;
+    &:hover{
+        background-color: #f14409 !important;
+    }
 }
 
 .button--yellow{
     border: 1px solid #f4d65f;
-    background-color: #f2c414;
+    background-color: #f2c414 !important;
+    &:hover{
+        background-color: #f4d65f !important;;
+    }
 }
 
 .button--blue{
-    border: 1px solid #0072bc;
-    background-color: #0071bc;
+    border: 1px solid #2187bc;
+    background-color: #0071bc !important;
+    &:hover{
+        background-color: #2187BC !important;
+    }
 }
