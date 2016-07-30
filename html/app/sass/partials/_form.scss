@@ -162,9 +162,7 @@
     text-align: center;
     @include border-radius(10px);
     @include transition(color 0.3s, background-color 0.3s, border-color 0.3s);
-    &:hover{
-        text-decoration: none;
-    }
+    text-decoration: none !important;
 }
 
 .button--icon{
@@ -195,5 +193,24 @@
     background-color: #0071bc !important;
     &:hover{
         background-color: #2187BC !important;
+    }
+}
+
+.button--none{
+    color: $color-blue !important;
+    border: 1px solid transparent;
+    background-color: transparent !important;
+    position: relative;
+    padding-left: 40px;
+    &:hover{
+        background-color: transparent !important;
+        text-decoration: underline !important;
+    }
+
+    i{
+        font-size: 26px;
+        position: absolute;
+        top: 7px;
+        left: 10px;
     }
 }

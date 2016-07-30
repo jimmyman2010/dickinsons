@@ -53,7 +53,7 @@
     .module--title{
         font-weight: 400;
         font-size: 25px;
-        color: #00409a;
+        color: #0060c1;
         margin: 0 0 10px;
     }
 }
@@ -116,5 +116,122 @@
     a{
         display: block;
         margin: 8px 0;
+    }
+}
+
+
+.module--related-news{
+    li{
+        position: relative;
+        padding: 5px 0 5px 40px;
+
+        &:before{
+            content:"\2022";
+            color: #4e4b4c;
+            font-size: 26px;
+            font-family: Arial, sans-serif;
+
+            position: absolute;
+            left: 20px;
+            top: -2px;
+        }
+    }
+}
+
+.tag-line{
+    font-size: 14px;
+    color: #896651;
+    margin: 20px 0;
+}
+
+.viral-tools{
+    margin: 20px 0;
+    @include clearfix;
+    .viral-tools--right{
+        float: right;
+    }
+    .viral-tools--left{
+        float: left
+    }
+}
+
+
+.body{
+    @include clearfix;
+    line-height: 1.5;
+    color: #896651;
+    > *{
+        margin: 0 0 22px;
+    }
+    a{
+        text-decoration: underline;
+    }
+    .left{
+        float: left;
+        margin: 0 15px 15px 0;
+    }
+    .right{
+        float: right;
+        margin: 0 0 15px 15px;
+    }
+    .center{
+        text-align: center;
+    }
+
+    ul{
+
+    }
+    li{
+        position: relative;
+        padding: 5px 30px;
+        &:before{
+            content:"\2022";
+            color: #4e4b4c;
+            font-size: 26px;
+            font-family: Arial, sans-serif;
+
+            position: absolute;
+            left: 10px;
+            top: -2px;
+        }
+    }
+
+    h3{
+        font-family: $font-monarcha;
+        font-size: 40px;
+        line-height: 1.1;
+        color: #02306b;
+    }
+    h4{
+        font-weight: 400;
+        font-size: 26px;
+        color: $color-blue;
+        line-height: 1.1;
+    }
+}
+
+
+
+.yellow-template{
+    .body{
+        color: #62534e;
+        font-size: 18px;
+
+        li:before{
+            color: #62534e;
+        }
+    }
+}
+
+
+
+.blue-template{
+    .body{
+        color: #001b5e;
+        font-size: 18px;
+
+        li:before{
+            color: #001b5e;
+        }
     }
 }
