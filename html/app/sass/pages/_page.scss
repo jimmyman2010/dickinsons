@@ -1,15 +1,3 @@
-.blue-template{
-    a{
-        color: #0372be;
-    }
-    .site-title {
-        border-bottom: 1px solid #8ec0e1;
-        @include box-shadow(0 1px 0 #2a89c7);
-        .title {
-            color: #0970c1;
-        }
-    }
-}
 
 .site-main{
     min-height: 400px;
@@ -65,3 +53,18 @@
 }
 
 
+
+
+
+.blue-template{
+    a{
+        color: #0372be;
+    }
+    .site-title {
+        border-bottom: 1px solid #8ec0e1;
+        @include box-shadow(0 1px 0 #2a89c7);
+        .title {
+            color: #0970c1;
+        }
+    }
+}

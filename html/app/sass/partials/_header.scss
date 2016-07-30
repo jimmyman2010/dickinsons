@@ -1,33 +1,4 @@
 
-.blue-template{
-    .site-header {
-        .site-menu {
-            background-color: #bcdafc;
-            .bar {
-                background-color: $color-blue;
-            }
-
-            .item {
-                > a {
-                    color: #0057ae;
-                    &.active, &:hover{
-                        color: #01529c;
-                    }
-                }
-            }
-
-            .blue-label{
-                a{
-                    color: white;
-                    &:hover{
-                        color: white;
-                    }
-                }
-            }
-        }
-    }
-}
-
 .site-header{
     padding-top: 30px;
     .logo{
@@ -232,5 +203,33 @@
 
 
 
+    }
+}
+
+
+.blue-template{
+    .site-menu {
+        background-color: #bcdafc;
+        .bar {
+            background-color: $color-blue;
+        }
+
+        .item {
+            > a {
+                color: #0057ae;
+                &.active, &:hover{
+                    color: #01529c;
+                }
+            }
+        }
+
+        .blue-label{
+            a{
+                color: white;
+                &:hover{
+                    color: white;
+                }
+            }
+        }
     }
 }
