@@ -56,6 +56,19 @@
 
 
 
+.yellow-template{
+    a{
+        color: #e9c002;
+    }
+    .site-title {
+        border-bottom: 1px solid rgba(#e9ba12, 0.8);
+        @include box-shadow(0 1px 0 #e9ba12);
+        .title {
+            color: #edb915;
+        }
+    }
+}
+
 .blue-template{
     a{
         color: #0372be;
