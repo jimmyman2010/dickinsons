@@ -1,0 +1,149 @@
+.site-header{
+    padding-top: 30px;
+    .logo{
+        float: left;
+        margin: 0 0 15px;
+    }
+    .meta-info{
+        float: right;
+        text-align: right;
+        font-size: 12px;
+    }
+    .slogan{
+        .h1{
+            color: #00367c;
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        div{
+            font-weight: 700;
+            color: #1e4c82;
+            position: relative;
+            padding-right: 55px;
+
+            span{
+                display: inline-block;
+                position: absolute;
+                top: -3px;
+                right: -3px;
+                font-size: 18px;
+            }
+            a{
+                display: inline-block;
+                margin: 0 3px;
+            }
+            .facebook{
+                color: #436eb1;
+            }
+            .email{
+                color: #b6b6b8;
+            }
+        }
+    }
+
+    .language{
+        .language--toggle{
+            display: none;
+        }
+        .language--menu{
+            margin: 15px 0;
+        }
+        li{
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+
+
+
+
+
+
+    .site-menu{
+        background-color: #988675;
+        .container{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .bar{
+            width: 100%;
+            height: 14px;
+            background-color: $color-yellow;
+        }
+
+        .main-menu{
+            @include clearfix;
+        }
+        .item{
+            float: left;
+            padding: 12px 6px;
+            font-size: 14px;
+            &:first-child{
+                padding-left: 0;
+            }
+            a{
+                display: inline-block;
+                height: 30px;
+                line-height: 30px;
+                color: white;
+                padding: 0 15px;
+                @include border-radius(10px);
+
+                &.active, &:hover{
+                    background-color: white;
+                    color: #473428;
+                    text-decoration: none;
+                }
+            }
+            .button{
+                font-size: 14px;
+                padding: 0 9px;
+            }
+        }
+        .yellow-label{
+            background-color: $color-yellow;
+            position: relative;
+            &:before{
+                content: '';
+                display: block;
+                height: 14px;
+                width: 100%;
+                background-color: $color-yellow;
+                @include border-radius(10px 10px 0 0);
+
+                position: absolute;
+                left: 0;
+                bottom: 100%;
+            }
+            a{
+                color: #2b3367;
+                &:hover{
+                    background-color: transparent;
+                }
+            }
+        }
+        .blue-label{
+            background-color: $color-blue;
+            position: relative;
+            &:before{
+                content: '';
+                display: block;
+                height: 14px;
+                width: 100%;
+                background-color: $color-blue;
+                @include border-radius(10px 10px 0 0);
+
+                position: absolute;
+                left: 0;
+                bottom: 100%;
+            }
+            a{
+                &:hover{
+                    background-color: transparent;
+                    color: white;
+                }
+            }
+        }
+
+    }
+}

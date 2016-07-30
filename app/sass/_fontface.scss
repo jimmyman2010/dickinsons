@@ -1,34 +1,13 @@
 $url: "../fonts";
 
 @font-face {
-    font-family: "Gotham";
-    src: url("#{$url}/Gotham-Bold.eot"); /* IE9 */
-    src: url("#{$url}/Gotham-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("#{$url}/Gotham-Bold.woff") format("woff"), /* chrome, firefox */
-    url("#{$url}/Gotham-Bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-    url("#{$url}/Gotham-Bold.svg#Gotham") format("svg"); /* iOS 4.1- */
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "VNF-Gotham";
-    src: url("#{$url}/VNF-Gotham.eot"); /* IE9 */
-    src: url("#{$url}/VNF-Gotham.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("#{$url}/VNF-Gotham.woff") format("woff"), /* chrome, firefox */
-    url("#{$url}/VNF-Gotham.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-    url("#{$url}/VNF-Gotham.svg#VNF-Gotham") format("svg"); /* iOS 4.1- */
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "You2013";
-    src: url("#{$url}/you2013-webfont.eot"); /* IE9 */
-    src: url("#{$url}/you2013-webfont.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("#{$url}/you2013-webfont.woff") format("woff"), /* chrome, firefox */
-    url("#{$url}/you2013-webfont.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-    url("#{$url}/you2013-webfont.svg#You2013") format("svg"); /* iOS 4.1- */
+    font-family: "Monarcha W01 Book";
+    src: url("#{$url}/006a6b206d6200e0cedf4f4c9c963c58.eot"); /* IE9*/
+    src: url("#{$url}/006a6b206d6200e0cedf4f4c9c963c58.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("#{$url}/006a6b206d6200e0cedf4f4c9c963c58.woff2") format("woff2"), /* chrome?firefox */
+    url("#{$url}/006a6b206d6200e0cedf4f4c9c963c58.woff") format("woff"), /* chrome?firefox */
+    url("#{$url}/006a6b206d6200e0cedf4f4c9c963c58.ttf") format("truetype"), /* chrome?firefox?opera?Safari, Android, iOS 4.2+*/
+    url("#{$url}/006a6b206d6200e0cedf4f4c9c963c58.svg#Monarcha W01 Book") format("svg"); /* iOS 4.1- */
     font-style: normal;
     font-weight: normal;
 }

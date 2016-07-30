@@ -1,0 +1,120 @@
+.left-rail{
+    float: left;
+    width: 240px;
+}
+
+.blog-content{
+    float: right;
+    width: 690px;
+
+    .item{
+        margin: 15px 0 50px;
+        @extend .clearfix;
+        figure{
+            float: left;
+            width: 200px;
+            margin-top: 5px;
+
+            figcaption{
+                padding: 10px 0;
+                font-size: 14px;
+                line-height: 1.2;
+                color: #e9b700;
+            }
+        }
+
+        .details{
+            float: right;
+            width: 460px;
+            line-height: 1.5;
+            color: #6f4b45;
+            h2{
+                color: #001b5d;
+                font-weight: 400;
+                font-size: 20px;
+                margin: 0;
+            }
+            .meta{
+                margin: 12px 0;
+                font-size: 14px;
+                span{
+                    color: #e9b700;
+                }
+                a{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.module{
+    margin-bottom: 40px;
+    .module--title{
+        font-weight: 400;
+        font-size: 25px;
+        color: #00409a;
+        margin: 0 0 10px;
+    }
+}
+
+.module--category{
+    li{
+        border-top: 1px solid #f8fafa;
+        @include box-shadow(0 -1px 0 #f0f1f2);
+
+        padding: 10px 0;
+
+        &:first-child{
+            border-top: none;
+            @include box-shadow(none);
+        }
+
+        a{
+            color: #413b3e;
+        }
+    }
+}
+
+.module--tag-cloud{
+    a{
+        display: inline-block;
+        font-size: 14px;
+        color: white;
+        background-color: #f2c414;
+        padding: 5px 8px;
+        margin: 3px 0;
+        @include border-radius(15px);
+    }
+}
+
+.module--witch-hazel-uses{
+    .module--content{
+        padding: 0 15px;
+        background-color: #fef7e3;
+        @include border-radius(15px);
+    }
+
+    li{
+        border-top: 1px solid #fefbef;
+        @include box-shadow(0 -1px 0 #fefefb);
+
+        padding: 10px 0;
+
+        &:first-child{
+            border-top: none;
+            @include box-shadow(none);
+        }
+
+        a{
+            color: #413b3e;
+        }
+    }
+}
+
+.module--products{
+    a{
+        display: block;
+        margin: 8px 0;
+    }
+}
