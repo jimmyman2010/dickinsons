@@ -8,13 +8,15 @@
  */
 ?>
 
-<article class="item">
+<article class="item<?= has_post_thumbnail() ? ' has-thumbnail' : '' ?>">
+	<?php if(has_post_thumbnail()) : ?>
 	<figure>
 		<?php dickinsons_post_thumbnail(); ?>
 		<figcaption>
 			<?php dickinsons_entry_tag(false); ?>
 		</figcaption>
 	</figure>
+	<?php endif; ?>
 
 	<div class="details">
 		<?php the_title( sprintf( '<h2><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>

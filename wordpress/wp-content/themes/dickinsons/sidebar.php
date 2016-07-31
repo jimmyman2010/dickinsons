@@ -7,7 +7,7 @@
  */
 ?>
 
-<aside class="left-rail" role="complementary">
+<!--aside class="left-rail" role="complementary">
 
 	<div class="module module--category">
 		<h3 class="module--title">Categories</h3>
@@ -61,14 +61,13 @@
 		</div>
 	</div>
 
-</aside>
-<!--
+</aside-->
 
-<?php if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
-	<aside id="secondary" class="sidebar widget-area" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+
+<?php if ( is_active_sidebar( 'sidebar' )  ) : ?>
+	<aside class="left-rail" role="complementary">
+		<?php dynamic_sidebar( 'sidebar' ); ?>
 	</aside>
 <?php endif; ?>
 
 
--->

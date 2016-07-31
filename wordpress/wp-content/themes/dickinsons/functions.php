@@ -56,7 +56,7 @@ function dickinsons_setup() {
 	load_theme_textdomain( 'dickinsons', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	//add_theme_support( 'automatic-feed-links' );
 
 	/*
 	 * Let WordPress manage the document title.
@@ -67,28 +67,17 @@ function dickinsons_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
-	 * Enable support for custom logo.
-	 *
-	 *  @since Twenty Sixteen 1.2
-	 */
-	add_theme_support( 'custom-logo', array(
-		'height'      => 240,
-		'width'       => 240,
-		'flex-height' => true,
-	) );
-
-	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1200, 9999 );
+	set_post_thumbnail_size( 200, 140 );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'dickinsons' ),
-		'social'  => __( 'Social Links Menu', 'dickinsons' ),
+		'second'  => __( 'Second Menu', 'dickinsons' ),
 	) );
 
 	/*
@@ -120,31 +109,11 @@ function dickinsons_setup() {
 		'chat',
 	) );
 
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	add_editor_style( array( 'css/editor-style.css', dickinsons_fonts_url() ) );
-
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif; // dickinsons_setup
 add_action( 'after_setup_theme', 'dickinsons_setup' );
-
-/**
- * Sets the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- *
- * @since Twenty Sixteen 1.0
- */
-function dickinsons_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'dickinsons_content_width', 840 );
-}
-add_action( 'after_setup_theme', 'dickinsons_content_width', 0 );
 
 /**
  * Registers a widget area.
@@ -156,65 +125,15 @@ add_action( 'after_setup_theme', 'dickinsons_content_width', 0 );
 function dickinsons_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'dickinsons' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'dickinsons' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Content Bottom 1', 'dickinsons' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'dickinsons' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Content Bottom 2', 'dickinsons' ),
-		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'dickinsons' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<div id="%1$s" class="module %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="module--title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'dickinsons_widgets_init' );
-
-if ( ! function_exists( 'dickinsons_fonts_url' ) ) :
-/**
- * Register Google fonts for Twenty Sixteen.
- *
- * Create your own dickinsons_fonts_url() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- *
- * @return string Google fonts URL for the theme.
- */
-function dickinsons_fonts_url() {
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,vietnamese,latin-ext';
-
-	if ( 'off' !== _x( 'on', 'Open+Sans font: on or off', 'dickinsons' ) ) {
-		$fonts[] = 'Open+Sans:400,400italic,600,700,800';
-	}
-
-	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' => urlencode( implode( '|', $fonts ) ),
-			'subset' => urlencode( $subsets ),
-		), 'https://fonts.googleapis.com/css' );
-	}
-
-	return $fonts_url;
-}
-endif;
 
 /**
  * Handles JavaScript detection.
@@ -224,7 +143,7 @@ endif;
  * @since Twenty Sixteen 1.0
  */
 function dickinsons_javascript_detection() {
-	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+	//echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 add_action( 'wp_head', 'dickinsons_javascript_detection', 0 );
 
@@ -324,11 +243,6 @@ function dickinsons_hex2rgb( $color ) {
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images
  *
@@ -390,3 +304,12 @@ function dickinsons_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'dickinsons_widget_tag_cloud_args' );
+
+
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/remove-meta.php';
+
+
