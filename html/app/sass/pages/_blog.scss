@@ -29,10 +29,16 @@
             line-height: 1.5;
             color: #6f4b45;
             h2{
-                color: #001b5d;
                 font-weight: 400;
                 font-size: 20px;
                 margin: 0;
+                a{
+                    color: #001b5d;
+                    &:hover{
+                        text-decoration: none;
+                        color: #6f4b45;
+                    }
+                }
             }
             .meta{
                 margin: 12px 0;
@@ -42,6 +48,11 @@
                 }
                 a{
                     text-decoration: underline;
+                }
+            }
+            .summary{
+                p{
+                    display: inline;
                 }
             }
         }
@@ -156,10 +167,30 @@
 }
 
 
+.single-title{
+    h2{
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 1.1;
+        color: #003E7E;
+        margin: 10px 0;
+    }
+    .meta{
+        margin: 20px 0;
+        font-size: 14px;
+        span{
+            color: #e9b700;
+        }
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+
 .body{
     @include clearfix;
     line-height: 1.5;
-    color: #896651;
+    color: #696056;
     > *{
         margin: 0 0 22px;
     }
@@ -168,14 +199,28 @@
     }
     .left{
         float: left;
-        margin: 0 15px 15px 0;
+        margin: 5px 15px 15px 0;
     }
     .right{
         float: right;
-        margin: 0 0 15px 15px;
+        margin: 5px 0 15px 15px;
     }
     .center{
         text-align: center;
+    }
+
+    .alignleft{
+        float: left;
+        margin: 5px 15px 15px 0;
+    }
+    .alignright{
+        float: right;
+        margin: 5px 0 15px 15px;
+    }
+    .aligncenter{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     ul{
@@ -196,17 +241,31 @@
         }
     }
 
-    h3{
+    h2{
         font-family: $font-monarcha;
         font-size: 40px;
         line-height: 1.1;
-        color: #02306b;
+        color: #003E7E;
+    }
+    h3, h4, h5, h6{
+        font-weight: 400;
+        color: #0071BC;
+    }
+    h3{
+        font-size: 23px;
+        line-height: 1.2;
     }
     h4{
-        font-weight: 400;
-        font-size: 26px;
-        color: $color-blue;
-        line-height: 1.1;
+        font-size: 20px;
+        line-height: 1.3;
+    }
+    h5{
+        font-size: 17px;
+        line-height: 1.5;
+    }
+    h6{
+        font-size: 14px;
+        line-height: 1.5;
     }
 }
 
@@ -214,7 +273,7 @@
 
 .yellow-template{
     .body{
-        color: #62534e;
+        color: #696056;
         font-size: 18px;
 
         li:before{

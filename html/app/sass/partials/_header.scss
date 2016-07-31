@@ -85,9 +85,6 @@
             padding: 12px 5px;
             font-size: 14px;
             font-weight: 600;
-            &:first-child{
-                padding-left: 0;
-            }
             > a{
                 display: inline-block;
                 height: 30px;
@@ -96,7 +93,10 @@
                 padding: 0 15px;
                 @include border-radius(10px);
 
-                &.active, &:hover{
+                &:hover{
+                    text-decoration: none;
+                }
+                &.active{
                     background-color: white;
                     color: #473428;
                     text-decoration: none;
@@ -108,10 +108,13 @@
                 padding: 0 9px;
             }
 
-            &:hover .sub-menu{
-                //display: block;
-                @include opacity(1);
-                height: auto;
+            &:hover {
+                background-color: #696056;
+                .sub-menu {
+                    //display: block;
+                    @include opacity(1);
+                    height: auto;
+                }
             }
             .sub-menu{
                 font-weight: 400;
@@ -148,14 +151,14 @@
             }
         }
         .yellow-label{
-            background-color: $color-yellow;
+            @include background-image(linear-gradient(#fada49, #f6c716));
             position: relative;
             &:before{
                 content: '';
                 display: block;
                 height: 14px;
                 width: 100%;
-                background-color: $color-yellow;
+                @include background-image(linear-gradient(#fade56, #fada49));
                 @include border-radius(10px 10px 0 0);
 
                 position: absolute;
@@ -176,14 +179,14 @@
             }
         }
         .blue-label{
-            background-color: $color-blue;
+            @include background-image(linear-gradient(#1e9bd7, #0071bc));
             position: relative;
             &:before{
                 content: '';
                 display: block;
                 height: 14px;
                 width: 100%;
-                background-color: $color-blue;
+                @include background-image(linear-gradient(#29abe2, #1e9bd7));
                 @include border-radius(10px 10px 0 0);
 
                 position: absolute;
@@ -209,12 +212,15 @@
 
 .blue-template{
     .site-menu {
-        background-color: #bcdafc;
+        background-color: #BBDAFC;
         .bar {
             background-color: $color-blue;
         }
 
         .item {
+            &:hover{
+                background-color: #96C5EF;
+            }
             > a {
                 color: #0057ae;
                 &.active, &:hover{
