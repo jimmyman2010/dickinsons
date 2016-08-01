@@ -12,7 +12,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="site-title">
 			<?php dickinsons_the_breadcrumbs(); ?>
-			<h1 class="title"><span><?php printf( __( 'Search Results for: %s', 'dickinsons' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></span></h1>
+			<h1 class="title"><span>Search Results</span></h1>
 		</div>
 		<div class="main-container clearfix">
 

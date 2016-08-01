@@ -13,16 +13,8 @@
 		<?php the_title( '<h1 class="title"><span>', '</span></h1>' ); ?>
 	</div>
 </div>
-<div class="main-container clearfix">
-	<div class="container">
-		<article class="site-article" role="main">
+<article class="main-container clearfix">
 
-			<?php dickinsons_post_thumbnail(); ?>
+	<?php the_content(); ?>
 
-			<div class="site-article--content body">
-				<?php the_content(); ?>
-			</div>
-		</article>
-	</div>
-
-</div>
+</article>
