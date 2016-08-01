@@ -193,6 +193,7 @@
                     bottom: 100%;
                 }
                 > a{
+                    color: white;
                     background-color: transparent;
                 }
                 a{
@@ -256,7 +257,6 @@
                     }
                 }
             }
-
             .yellow-label {
                 .sub-menu{
                     background-color: $color-yellow;
