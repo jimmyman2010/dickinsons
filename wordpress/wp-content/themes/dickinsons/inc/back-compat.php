@@ -1,14 +1,13 @@
 <?php
 /**
- * Twenty Sixteen back compat functionality
+ * Dickinsons back compat functionality
  *
  * Prevents Twenty Sixteen from running on WordPress versions prior to 4.4,
  * since this theme is not meant to be backward compatible beyond that and
  * relies on many newer functions and markup changes introduced in 4.4.
  *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @package Dickinsons
+ * @since Dickinsons 1.0.0
  */
 
 /**

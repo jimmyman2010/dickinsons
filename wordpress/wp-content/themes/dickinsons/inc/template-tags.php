@@ -4,9 +4,8 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @package Dickinsons
+ * @since Dickinsons 1.0.0
  */
 
 if ( ! function_exists( 'dickinsons_entry_meta' ) ) :

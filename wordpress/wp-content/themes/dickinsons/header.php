@@ -4,9 +4,8 @@
  *
  * Displays all of the head element and everything up until the "site-content" div.
  *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @package Dickinsons
+ * @since Dickinsons 1.0.0
  */
 
 ?><!DOCTYPE html>
@@ -24,7 +23,7 @@
 
 <body <?php body_class(); ?>>
 
-<div class="site-container">
+<div id="site-container" class="site-container">
 	<header class="site-header">
 		<div class="container clearfix">
 			<a href="<?= esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?= get_template_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo( 'name' ); ?>" /></a>

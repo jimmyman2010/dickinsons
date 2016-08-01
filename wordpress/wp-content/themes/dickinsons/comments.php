@@ -5,9 +5,8 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @package Dickinsons
+ * @since Dickinsons 1.0.0
  */
 
 /*

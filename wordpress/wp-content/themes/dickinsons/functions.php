@@ -20,9 +20,8 @@
  * For more information on hooks, actions, and filters,
  * {@link https://codex.wordpress.org/Plugin_API}
  *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @package Dickinsons
+ * @since Dickinsons 1.0.0
  */
 
 /**
