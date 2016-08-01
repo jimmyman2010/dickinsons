@@ -51,34 +51,17 @@
 
 		<nav class="site-menu">
 			<div class="container">
-				<ul class="main-menu">
-					<li class="item"><a href="#">Home</a></li>
-					<li class="item"><a href="#">About Us</a></li>
-					<li class="item yellow-label">
-						<a href="#">Skin Care</a>
-						<ul class="sub-menu">
-							<li><a href="#">Gentle Skin Cleanser</a></li>
-							<li><a href="#">Pore Perfecting Toner</a></li>
-						</ul>
-					</li>
-					<li class="item blue-label">
-						<a href="#">Astringent</a>
-						<ul class="sub-menu">
-							<li><a href="#">Gentle Skin Cleanser</a></li>
-							<li><a href="#">Pore Perfecting Toner</a></li>
-						</ul>
-					</li>
-					<li class="item">
-						<a href="#">About Witch Hazel</a>
-						<ul class="sub-menu">
-							<li><a href="#">Gentle Skin Cleanser</a></li>
-							<li><a href="#">Pore Perfecting Toner</a></li>
-						</ul></li>
-					<li class="item"><a href="#">Tips &amp; Advice</a></li>
-					<li class="item"><a class="active" href="#">Blog</a></li>
-					<li class="item"><a href="#">Contact Us</a></li>
+				<?php
+				if ( has_nav_menu( 'primary' ) ) {
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_class' => 'main-menu',
+						'container' => 'ul'
+					) );
+				} ?>
+				<!--ul class="main-menu">
 					<li class="item"><a href="#" class="button button--red"><i class="fa fa-shopping-cart"></i> Where To Buy</a></li>
-				</ul>
+				</ul-->
 			</div>
 			<div class="bar"></div>
 		</nav>

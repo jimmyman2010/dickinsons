@@ -1,15 +1,13 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The main template file
  *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
  *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each one. For example, tag.php (Tag archives),
- * category.php (Category archives), author.php (Author archives), etc.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
@@ -22,7 +20,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="site-title">
 			<?php dickinsons_the_breadcrumbs(); ?>
-			<?php the_archive_title( '<h1 class="title"><span>', '</span></h1>' ); ?>
+			<?php single_tag_title('<h1 class="title"><span>Tag: ', '</span></h1>'); ?>
 		</div>
 		<div class="main-container clearfix">
 

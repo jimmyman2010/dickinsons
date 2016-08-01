@@ -9,45 +9,38 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<main class="site-main">
+	<div class="container">
+		<div class="site-title">
+			<?php dickinsons_the_breadcrumbs(); ?>
+			<h1 class="title"><span><?php printf( __( 'Search Results for: %s', 'dickinsons' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></span></h1>
+		</div>
+		<div class="main-container clearfix">
 
-		<?php if ( have_posts() ) : ?>
+			<section class="blog-content" role="main">
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentysixteen' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+				<?php if ( have_posts() ) : ?>
 
-			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post();
+					<?php
+					// Start the loop.
+					while ( have_posts() ) : the_post();
+						get_template_part( 'template-parts/content', get_post_format() );
+					endwhile;
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+					get_template_part( 'template-parts/content', 'pagination' );
 
-			// End the loop.
-			endwhile;
+				// If no content, include the "No posts found" template.
+				else :
+					get_template_part( 'template-parts/content', 'none' );
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-				'next_text'          => __( 'Next page', 'twentysixteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-			) );
+				endif;
+				?>
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content', 'none' );
+			</section>
 
-		endif;
-		?>
-
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
-
-<?php get_sidebar(); ?>
+			<?php get_sidebar(); ?>
+		</div>
+	</div>
+</main>
 <?php get_footer(); ?>
+

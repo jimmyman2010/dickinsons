@@ -8,38 +8,22 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<div class="container">
+	<div class="site-title">
+		<?php dickinsons_the_breadcrumbs(); ?>
+		<?php the_title( '<h1 class="title"><span>', '</span></h1>' ); ?>
+	</div>
+</div>
+<div class="main-container clearfix">
+	<div class="container">
+		<article class="site-article" role="main">
 
-	<?php dickinsons_post_thumbnail(); ?>
+			<?php dickinsons_post_thumbnail(); ?>
 
-	<div class="entry-content">
-		<?php
-		the_content();
+			<div class="site-article--content body">
+				<?php the_content(); ?>
+			</div>
+		</article>
+	</div>
 
-		wp_link_pages( array(
-			'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'dickinsons' ) . '</span>',
-			'after'       => '</div>',
-			'link_before' => '<span>',
-			'link_after'  => '</span>',
-			'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'dickinsons' ) . ' </span>%',
-			'separator'   => '<span class="screen-reader-text">, </span>',
-		) );
-		?>
-	</div><!-- .entry-content -->
-
-	<?php
-		edit_post_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'dickinsons' ),
-				get_the_title()
-			),
-			'<footer class="entry-footer"><span class="edit-link">',
-			'</span></footer><!-- .entry-footer -->'
-		);
-	?>
-
-</article><!-- #post-## -->
+</div>

@@ -12,10 +12,7 @@ get_header(); ?>
 <main class="site-main">
 	<div class="container">
 		<div class="site-title">
-			<ul class="breadcrumb">
-				<li><span class="divider">&raquo;</span><a href="/">Home</a></li>
-				<li><span class="divider">&raquo;</span><span>Blog</span></li>
-			</ul>
+			<?php dickinsons_the_breadcrumbs(); ?>
 			<h1 class="title"><span>Blog</span></h1>
 		</div>
 		<div class="main-container clearfix">

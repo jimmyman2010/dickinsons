@@ -61,20 +61,15 @@
 		</section>
 		<section class="copyright">
 			<div class="container clearfix">
-				<ul class="nav">
-					<li class="item">
-						<a href="#">About Dickinson's</a>
-					</li>
-					<li class="item">
-						<a href="#">Contact Us</a>
-					</li>
-					<li class="item">
-						<a href="#">Privacy Policy</a>
-					</li>
-					<li class="item">
-						<a href="#">Legal Notice</a>
-					</li>
-				</ul>
+				<?php
+				if ( has_nav_menu( 'footer' ) ) {
+					wp_nav_menu( array(
+						'theme_location' => 'footer',
+						'menu_class' => 'nav',
+						'container' => 'ul'
+					) );
+				} ?>
+
 				<div class="copy">
 					<p>&copy; 2016 Dickinson Brands Inc., All Rights Reserved.
 						<br>This site is published by Dickinson Brands VN and is intended for visitors

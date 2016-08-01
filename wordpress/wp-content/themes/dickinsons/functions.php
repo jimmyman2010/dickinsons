@@ -77,7 +77,8 @@ function dickinsons_setup() {
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'dickinsons' ),
-		'second'  => __( 'Second Menu', 'dickinsons' ),
+		'sidebar'  => __( 'Blog Sidebar Menu', 'dickinsons' ),
+		'footer'  => __( 'Footer Menu', 'dickinsons' ),
 	) );
 
 	/*
@@ -127,7 +128,7 @@ function dickinsons_widgets_init() {
 		'name'          => __( 'Sidebar', 'dickinsons' ),
 		'id'            => 'sidebar',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'dickinsons' ),
-		'before_widget' => '<div id="%1$s" class="module %2$s">',
+		'before_widget' => '<div id="%1$s" class="module module--%2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="module--title">',
 		'after_title'   => '</h3>',
