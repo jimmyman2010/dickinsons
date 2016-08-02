@@ -30,22 +30,12 @@
 					</div>
 
 					<div class="latest-news">
-						<h3>Our Blog</h3>
-						<ul>
-							<li><a href="#">At vero eos et accusamus et iusto odio dignissims dicumes qui blanditilis</a></li>
-							<li><a href="#">At vero eos et accusamus et iusto odio dignissims dicumes qui blanditilis</a></li>
-							<li><a href="#">At vero eos et accusamus et iusto odio dignissims dicumes qui blanditilis</a></li>
-							<li><a href="#">At vero eos et accusamus et iusto odio dignissims dicumes qui blanditilis</a></li>
-						</ul>
-						<a href="#" class="button button--yellow button--icon"><i class="fa fa-newspaper-o"></i> All articles</a>
+						<?php echo dickinsons_recent_post(); ?>
+						<a href="/blog" class="button button--yellow button--icon"><i class="fa fa-newspaper-o"></i> All articles</a>
 					</div>
 
 					<div class="quotes">
-						<blockquote><span>"</span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et placerat velit, nec lacinia est. Fusce convallis tortor nec enim pretium, et bibendum risus egestas.
-							<br><br>Nulla eu fermentum ex. Donec euismod, magna ac porta faucibus, libero dolor pulvinar nunc, vel porttitor magna leo sed velit.
-							<span>"</span></blockquote>
-						<p>- Hala Motiva</p>
+						<?php echo ab_arq_generate(); ?>
 					</div>
 				</div>
 				<div class="subscribe">

@@ -58,9 +58,6 @@
 						'container' => 'ul'
 					) );
 				} ?>
-				<!--ul class="main-menu">
-					<li class="item"><a href="#" class="button button--red"><i class="fa fa-shopping-cart"></i> Where To Buy</a></li>
-				</ul-->
 			</div>
 			<div class="bar"></div>
 		</nav>

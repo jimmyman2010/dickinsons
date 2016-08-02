@@ -312,4 +312,7 @@ add_filter( 'widget_tag_cloud_args', 'dickinsons_widget_tag_cloud_args' );
  */
 require get_template_directory() . '/inc/remove-meta.php';
 
+require get_template_directory() . '/inc/recent-post.php';
+require get_template_directory() . '/inc/post-quotes.php';
+
 

@@ -52,6 +52,43 @@
     }
 }
 
+.pagination{
+    margin: 0 0 50px;
+    text-align: center;
+    .screen-reader-text{
+        display: none;
+    }
+    .nav-links{
+        .page-numbers{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            @include border-radius(20px);
+            background-color: #f2ebf1;
+            color: #2c3b54;
+            line-height: 30px;
+            text-align: center;
+            margin: 0 5px;
+            font-size: 14px;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        .current{
+            background-color: #0759b3;
+            color: white;
+        }
+        .prev, .next{
+            background-color: transparent;
+            color: #3d609c;
+            width: auto;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
 
 
 

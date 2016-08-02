@@ -8,7 +8,6 @@
 
 // Previous/next page navigation.
 the_posts_pagination( array(
-    'prev_text'          => __( 'Previous page', 'dickinsons' ),
-    'next_text'          => __( 'Next page', 'dickinsons' ),
-    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'dickinsons' ) . ' </span>',
+    'prev_text'          => __( '&laquo; previous', 'dickinsons' ),
+    'next_text'          => __( 'next &raquo;', 'dickinsons' ),
 ) );
