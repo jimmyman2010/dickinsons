@@ -16,8 +16,12 @@ get_header(); ?>
 	// Start the loop.
 	while ( have_posts() ) : the_post();
 
-		// Include the page content template.
-		get_template_part( 'template-parts/content', 'page' );
+		if (siteorigin_panels_render()){
+			get_template_part('template-parts/content', 'page-builder');
+		} else {
+			// Include the page content template.
+			get_template_part('template-parts/content', 'page');
+		}
 
 		// End of the loop.
 	endwhile;

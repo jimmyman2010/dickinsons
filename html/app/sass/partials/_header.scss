@@ -139,13 +139,13 @@
                         }
                     }
                 }
+                &.current-menu-item > a, &.current-menu-ancestor > a{
+                    background-color: white;
+                    color: #473428;
+                    text-decoration: none;
+                }
             }
 
-            .current-menu-item > a{
-                background-color: white;
-                color: #473428;
-                text-decoration: none;
-            }
             .yellow-label{
                 @include background-image(linear-gradient(#fada49, #f6c716));
                 position: relative;
@@ -176,6 +176,9 @@
                         color: #564e44;
                     }
                 }
+                &.current-menu-item > a, &.current-menu-ancestor > a{
+                    background-color: transparent;
+                }
             }
             .blue-label{
                 @include background-image(linear-gradient(#1e9bd7, #0071bc));
@@ -204,6 +207,10 @@
                 }
                 .sub-menu{
                     background-color: $color-blue;
+                }
+                &.current-menu-item > a, &.current-menu-ancestor > a{
+                    background-color: transparent;
+                    color: white;
                 }
             }
             .shopping-cart{
