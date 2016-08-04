@@ -1,0 +1,39 @@
+.panel-grid{
+    .container {
+        @include clearfix;
+    }
+    .total-item-2{
+        .panel-grid-cell {
+            width: 50%;
+        }
+        .panel-grid-cell--first{
+            float: left;
+            padding-right: 20px;
+        }
+        .panel-grid-cell--last{
+            float: right;
+            padding-left: 20px;
+        }
+    }
+    .total-item-3{
+        .panel-grid-cell {
+            float: left;
+            width: 33.33%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .panel-grid-cell--first{
+            padding-left: 0;
+            padding-right: 20px;
+        }
+        .panel-grid-cell--last{
+            float: right;
+            padding-right: 0;
+            padding-left: 20px;
+        }
+    }
+
+    .siteorigin-widget-tinymce, .textwidget{
+        @extend .body;
+    }
+}

@@ -1024,10 +1024,10 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 	ob_start();
 
 	// Add the panel layout wrapper
-	$panel_layout_classes = apply_filters( 'siteorigin_panels_layout_classes', array(), $post_id, $panels_data );
+	/*$panel_layout_classes = apply_filters( 'siteorigin_panels_layout_classes', array(), $post_id, $panels_data );
 	$panel_layout_attributes = apply_filters( 'siteorigin_panels_layout_attributes', array(
 		'class' => implode( ' ', $panel_layout_classes ),
-		'id' => 'pl-' . $post_id
+		//'id' => 'pl-' . $post_id
 	),  $post_id, $panels_data );
 	echo '<div';
 	foreach ( $panel_layout_attributes as $name => $value ) {
@@ -1035,7 +1035,7 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 			echo ' ' . $name . '="' . esc_attr($value) . '"';
 		}
 	}
-	echo '>';
+	echo '>';*/
 
 	global $siteorigin_panels_inline_css;
 	if( empty($siteorigin_panels_inline_css) ) $siteorigin_panels_inline_css = array();
@@ -1054,7 +1054,7 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 
 		$grid_attributes = apply_filters( 'siteorigin_panels_row_attributes', array(
 			'class' => implode( ' ', $grid_classes ),
-			'id' => !empty($grid_id) ? $grid_id : 'pg-' . $post_id . '-' . $gi,
+			//'id' => !empty($grid_id) ? $grid_id : 'pg-' . $post_id . '-' . $gi,
 		), $panels_data['grids'][$gi] );
 
 		// This allows other themes and plugins to add html before the row
@@ -1073,7 +1073,12 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 
 		// Themes can add their own attributes to the style wrapper
 		$row_style_wrapper = siteorigin_panels_start_style_wrapper( 'row', $style_attributes, !empty($panels_data['grids'][$gi]['style']) ? $panels_data['grids'][$gi]['style'] : array() );
-		if( !empty($row_style_wrapper) ) echo $row_style_wrapper;
+		if( !empty($row_style_wrapper) ) {
+			echo $row_style_wrapper;
+		}
+
+		//Open container
+		echo '<div class="container total-item-'.count($cells).'">';
 
 		$collapse_order = !empty( $panels_data['grids'][$gi]['style']['collapse_order'] ) ? $panels_data['grids'][$gi]['style']['collapse_order'] : ( !is_rtl() ? 'left-top' : 'right-top' );
 
@@ -1083,10 +1088,16 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 
 		foreach ( $cells as $ci => $widgets ) {
 			// Themes can add their own styles to cells
-			$cell_classes = apply_filters( 'siteorigin_panels_row_cell_classes', array('panel-grid-cell'), $panels_data );
+			$cell_classes = apply_filters('siteorigin_panels_row_cell_classes', array('panel-grid-cell'), $panels_data);
+			if($ci == 0) {
+				array_push($cell_classes, 'panel-grid-cell--first');
+			}
+			if($ci == (count($cells)-1)) {
+				array_push($cell_classes, 'panel-grid-cell--last');
+			}
 			$cell_attributes = apply_filters( 'siteorigin_panels_row_cell_attributes', array(
 				'class' => implode( ' ', $cell_classes ),
-				'id' => 'pgc-' . $post_id . '-' . ( !empty($grid_id) ? $grid_id : $gi )  . '-' . $ci
+				//'id' => 'pgc-' . $post_id . '-' . ( !empty($grid_id) ? $grid_id : $gi )  . '-' . $ci
 			), $panels_data );
 
 			echo '<div ';
@@ -1111,6 +1122,9 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 
 		echo '</div>';
 
+		//Close container
+		echo '</div>';
+
 		// Close the
 		if( !empty($row_style_wrapper) ) echo '</div>';
 
@@ -1120,7 +1134,7 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 
 	echo apply_filters( 'siteorigin_panels_after_content', '', $panels_data, $post_id );
 
-	echo '</div>';
+	/*echo '</div>';*/
 
 	do_action( 'siteorigin_panels_after_render', $panels_data, $post_id );
 
@@ -1199,8 +1213,8 @@ function siteorigin_panels_print_inline_css(){
 		}
 	}
 }
-add_action('wp_head', 'siteorigin_panels_print_inline_css', 12);
-add_action('wp_footer', 'siteorigin_panels_print_inline_css');
+//add_action('wp_head', 'siteorigin_panels_print_inline_css', 12);
+//add_action('wp_footer', 'siteorigin_panels_print_inline_css');
 
 /**
  * Render the widget.
