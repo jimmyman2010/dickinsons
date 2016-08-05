@@ -163,9 +163,6 @@
             @include clearfix;
 
             background-color: #988675;
-            @include desktop{
-                background-color: transparent;
-            }
 
             > .menu-item{
                 display: none;
