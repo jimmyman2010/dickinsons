@@ -69,6 +69,7 @@
         .container{
             padding-left: 0;
             padding-right: 0;
+            position: relative;
         }
         .bar{
             width: 100%;
@@ -76,15 +77,26 @@
             background-color: $color-yellow;
         }
 
+        .toggle-main-menu{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            @include desktop{
+                display: none;
+            }
+        }
+
         .main-menu{
             @include clearfix;
 
             > .menu-item{
                 position: relative;
-                float: left;
-                padding: 12px 5px;
+                padding: 12px 4px;
                 font-size: 14px;
                 font-weight: 600;
+                @include desktop{
+                    float: left;
+                }
                 > a{
                     display: inline-block;
                     height: 30px;
@@ -218,9 +230,9 @@
                     display: inline-block;
                     font-size: 14px;
                     font-weight: 400;
-                    padding: 0 10px;
+                    padding: 0 15px;
                     color: white !important;
-                    background-color: #F15A24;
+                    background-color: #f15a24 !important;
                     &:before{
                         content: "\f07a";
                         font: normal normal normal 16px/1 FontAwesome;
@@ -228,7 +240,7 @@
                         margin-right: 7px;
                     }
                     &:hover{
-                        background-color: #f14409;
+                        background-color: #f14409 !important;
                     }
                 }
             }

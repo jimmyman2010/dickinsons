@@ -316,3 +316,4 @@ require get_template_directory() . '/inc/recent-post.php';
 require get_template_directory() . '/inc/post-quotes.php';
 
 
+
