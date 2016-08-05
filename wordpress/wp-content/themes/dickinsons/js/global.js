@@ -1,7 +1,7 @@
 /**
  * Created by MinhMan.Tran on 3/4/2016.
  */
-var STAG = (function(){
+var DKS = (function(){
     'use strict';
     var method = {
         showNoticePopup: function(){
@@ -41,9 +41,19 @@ var STAG = (function(){
             }
             return {width: widthWindow, height: heightWindow};
         },
+        menuToggle: function() {
+            $('.language--toggle, .toggle-main-menu').on('click', function(){
+                $(this).toggleClass('open');
+            });
+
+            $(window).on('resize scroll', function(){
+                $('.language--toggle, .toggle-main-menu').removeClass('open');
+            });
+        },
 
         init: function () {
             method.windowWidthHeight();
+            method.menuToggle();
         }
     };
     return {
@@ -55,5 +65,5 @@ var STAG = (function(){
 
 $(function(){
     'use strict';
-    STAG.init();
+    DKS.init();
 });

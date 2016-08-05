@@ -1,9 +1,20 @@
 
 .site-header{
-    padding-top: 30px;
+    padding-top: 10px;
+    @include tablet{
+        padding-top: 20px;
+    }
+    @include desktop {
+        padding-top: 30px;
+    }
     .logo{
         float: left;
-        margin: 0 0 15px;
+        margin: 0 5px 35px;
+        width: 160px;
+        @include tablet {
+            margin: 0 5px 30px;
+            width: auto;
+        }
     }
     .meta-info{
         float: right;
@@ -11,6 +22,10 @@
         font-size: 12px;
     }
     .slogan{
+        display: none;
+        @include tablet{
+            display: block;
+        }
         .h1{
             color: #00367c;
             margin: 5px 0;
@@ -44,11 +59,35 @@
     }
 
     .language{
+        position: relative;
         .language--toggle{
-            display: none;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            @include border-radius(30px);
+
+            position: absolute;
+            right: 5px;
+            top: 5px;
+
+            &.open ~ .language--menu{
+                display: block;
+            }
+            @include tablet{
+                display: none;
+            }
         }
         .language--menu{
+            display: none;
+            position: absolute;
+            right: 5px;
+            top: 28px;
             margin: 15px 0;
+            @include tablet{
+                display: block;
+                position: static;
+            }
         }
         li{
             display: inline-block;
@@ -70,35 +109,82 @@
             padding-left: 0;
             padding-right: 0;
             position: relative;
+            @include clearfix;
         }
         .bar{
             width: 100%;
-            height: 14px;
+            height: 8px;
             background-color: $color-yellow;
+            @include desktop{
+                height: 14px;
+            }
         }
 
         .toggle-main-menu{
-            position: absolute;
-            top: 10px;
-            right: 10px;
+            float: right;
+            width: 52px;
+            padding: 5px 10px;
+            span{
+                display: block;
+                height: 4px;
+                margin: 5px 0;
+                background-color: white;
+                @include border-radius(1px);
+            }
             @include desktop{
                 display: none;
+            }
+
+            &.open ~ .main-menu-wrap .main-menu {
+                padding: 10px;
+                @include border-radius(0 0 20px 20px);
+                > .menu-item {
+                    display: block;
+                }
+            }
+        }
+
+        .main-menu-wrap{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            margin-top: 8px;
+            padding: 0 10px;
+            @include desktop{
+                position: static;
+                margin-top: 0;
+                padding: 0;
             }
         }
 
         .main-menu{
             @include clearfix;
 
+            background-color: #988675;
+            @include desktop{
+                background-color: transparent;
+            }
+
             > .menu-item{
+                display: none;
                 position: relative;
-                padding: 12px 4px;
+                padding: 6px 4px;
                 font-size: 14px;
                 font-weight: 600;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                &:first-child{
+                    border-top: none;
+                }
                 @include desktop{
                     float: left;
+                    display: block;
+                    padding: 12px 4px;
+                    border-top: none;
                 }
                 > a{
-                    display: inline-block;
+                    display: block;
                     height: 30px;
                     line-height: 30px;
                     color: white;
@@ -116,23 +202,27 @@
                         //display: block;
                         @include opacity(1);
                         height: auto;
+                        padding: 10px;
                     }
                 }
                 .sub-menu{
                     font-weight: 400;
                     //display: none;
-                    z-index: 1000;
-                    position: absolute;
-                    left: 0;
-                    top: 100%;
-                    width: 212px;
-                    padding: 10px;
                     @include border-radius(0 0 10px 10px);
-                    @include opacity(0);
-                    height: 0;
-                    overflow: hidden;
                     @include transition(all 0.3s);
-                    background-color: #988675;
+                    padding: 10px;
+
+                    @include desktop{
+                        z-index: 1000;
+                        position: absolute;
+                        left: 0;
+                        top: 100%;
+                        height: 0;
+                        overflow: hidden;
+                        @include opacity(0);
+                        background-color: #988675;
+                        width: 283px;
+                    }
 
                     li{
                         border-top: 1px solid rgba(255,255,255,0.2);
@@ -159,8 +249,17 @@
             }
 
             .yellow-label{
+                display: block;
+                position: absolute;
+                top: -50px;
+                left: 10px;
                 @include background-image(linear-gradient(#fada49, #f6c716));
-                position: relative;
+                border-top: none;
+                @include desktop {
+                    position: relative;
+                    top:auto;
+                    left: auto;
+                }
                 &:before{
                     content: '';
                     display: block;
@@ -183,6 +282,17 @@
                     }
                 }
                 .sub-menu{
+                    z-index: 1000;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    height: 0;
+                    overflow: hidden;
+                    @include opacity(0);
+                    width: 283px;
+
+                    padding: 0;
+
                     background-color: $color-yellow;
                     a{
                         color: #564e44;
@@ -193,8 +303,17 @@
                 }
             }
             .blue-label{
+                display: block;
+                position: absolute;
+                top: -50px;
+                left: 111px;
                 @include background-image(linear-gradient(#1e9bd7, #0071bc));
-                position: relative;
+                border-top: none;
+                @include desktop {
+                    position: relative;
+                    top:auto;
+                    left: auto;
+                }
                 &:before{
                     content: '';
                     display: block;
@@ -218,7 +337,22 @@
                     }
                 }
                 .sub-menu{
+                    z-index: 1000;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    height: 0;
+                    overflow: hidden;
+                    @include opacity(0);
+                    width: 283px;
+
+                    padding: 0;
+
+                    left: -101px;
                     background-color: $color-blue;
+                    @include desktop{
+                        left: 0;
+                    }
                 }
                 &.current-menu-item > a, &.current-menu-ancestor > a{
                     background-color: transparent;
@@ -227,7 +361,6 @@
             }
             .shopping-cart{
                 a{
-                    display: inline-block;
                     font-size: 14px;
                     font-weight: 400;
                     padding: 0 15px;
@@ -259,6 +392,7 @@
         }
 
         .main-menu {
+            background-color: #BBDAFC;
             > .menu-item {
                 &:hover {
                     background-color: #96C5EF;
@@ -270,7 +404,9 @@
                     }
                 }
                 .sub-menu{
-                    background-color: #BBDAFC;
+                    @include desktop {
+                        background-color: #BBDAFC;
+                    }
                     a{
                         color:#0057ae;
                     }

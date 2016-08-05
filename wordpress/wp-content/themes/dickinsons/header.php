@@ -50,14 +50,21 @@
 
 		<nav class="site-menu">
 			<div class="container">
-				<?php
-				if ( has_nav_menu( 'primary' ) ) {
-					wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'menu_class' => 'main-menu',
-						'container' => 'ul'
-					) );
-				} ?>
+				<a href="javascript:void(0);" class="toggle-main-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+				<div class="main-menu-wrap">
+					<?php
+					if ( has_nav_menu( 'primary' ) ) {
+						wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'menu_class' => 'main-menu',
+							'container' => 'ul'
+						) );
+					} ?>
+				</div>
 			</div>
 			<div class="bar"></div>
 		</nav>

@@ -168,7 +168,8 @@ function dickinsons_scripts() {
 		//wp_enqueue_script( 'dickinsons-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
 	}
 
-	//wp_enqueue_script( 'dickinsons-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160412', true );
+	wp_enqueue_script( 'dickinsons-vendor', get_template_directory_uri() . '/js/vendor.min.js', array(  ), VERSION, true );
+	wp_enqueue_script( 'dickinsons-script', get_template_directory_uri() . '/js/global.js', array( 'dickinsons-vendor' ), VERSION, true );
 
 	wp_localize_script( 'dickinsons-script', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'dickinsons' ),
