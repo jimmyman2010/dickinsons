@@ -1,27 +1,19 @@
 .left-rail{
-    float: left;
-    width: 240px;
+    @include desktop {
+        float: left;
+        width: 240px;
+    }
 }
 
 .blog-content{
-    float: right;
-    width: 690px;
+    @include desktop {
+        float: right;
+        width: 690px;
+    }
 
     .item{
         margin: 15px 0 50px;
         @extend .clearfix;
-        figure{
-            float: left;
-            width: 200px;
-            margin-top: 5px;
-
-            figcaption{
-                padding: 10px 0;
-                font-size: 14px;
-                line-height: 1.2;
-                color: #e9b700;
-            }
-        }
 
         .details{
             line-height: 1.5;
@@ -57,9 +49,25 @@
     }
 
     .has-thumbnail{
-        .details{
-            float: right;
-            width: 460px;
+        position: relative;
+        @include tablet {
+            padding-left: 225px;
+        }
+        figure{
+            text-align: center;
+            @include tablet {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                width: 200px;
+            }
+
+            figcaption{
+                padding: 10px 0;
+                font-size: 14px;
+                line-height: 1.2;
+                color: #e9b700;
+            }
         }
     }
 }
@@ -137,7 +145,10 @@
 .module--related-news{
     li{
         position: relative;
-        padding: 5px 0 5px 40px;
+        padding: 5px 0 5px 20px;
+        @include tablet{
+            padding-left: 40px;
+        }
 
         &:before{
             content:"\2022";
@@ -146,8 +157,11 @@
             font-family: Arial, sans-serif;
 
             position: absolute;
-            left: 20px;
+            left: 0;
             top: -2px;
+            @include tablet{
+                left: 20px;
+            }
         }
     }
 }
@@ -200,25 +214,24 @@
     a{
         text-decoration: underline;
     }
-    .left{
-        float: left;
-        margin: 5px 15px 15px 0;
-    }
-    .right{
-        float: right;
-        margin: 5px 0 15px 15px;
-    }
-    .center{
-        text-align: center;
-    }
 
     .alignleft{
-        float: left;
-        margin: 5px 15px 15px 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        @include tablet {
+            float: left;
+            margin: 5px 15px 15px 0;
+        }
     }
     .alignright{
-        float: right;
-        margin: 5px 0 15px 15px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        @include tablet {
+            float: right;
+            margin: 5px 0 15px 15px;
+        }
     }
     .aligncenter{
         display: block;

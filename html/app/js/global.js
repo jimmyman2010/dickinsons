@@ -46,7 +46,7 @@ var DKS = (function(){
                 $(this).toggleClass('open');
             });
 
-            $(window).on('resize scroll', function(){
+            $(window).on('resize', function(){
                 $('.language--toggle, .toggle-main-menu').removeClass('open');
             });
         },

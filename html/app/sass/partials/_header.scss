@@ -168,13 +168,14 @@
                 display: none;
                 position: relative;
                 padding: 6px 4px;
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: 600;
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
                 &:first-child{
                     border-top: none;
                 }
                 @include desktop{
+                    font-size: 14px;
                     float: left;
                     display: block;
                     padding: 12px 4px;
@@ -194,9 +195,10 @@
                 }
 
                 &:hover {
-                    background-color: #696056;
+                    @include desktop {
+                        background-color: #696056;
+                    }
                     .sub-menu {
-                        //display: block;
                         @include opacity(1);
                         height: auto;
                         padding: 10px;
@@ -204,10 +206,10 @@
                 }
                 .sub-menu{
                     font-weight: 400;
-                    //display: none;
+                    height: 0;
+                    overflow: hidden;
                     @include border-radius(0 0 10px 10px);
                     @include transition(all 0.3s);
-                    padding: 10px;
 
                     @include desktop{
                         z-index: 1000;
@@ -239,9 +241,27 @@
                     }
                 }
                 &.current-menu-item > a, &.current-menu-ancestor > a{
-                    background-color: white;
-                    color: #473428;
-                    text-decoration: none;
+                    @include desktop {
+                        background-color: white;
+                        color: #473428;
+                    }
+                }
+            }
+
+            .menu-item-has-children{
+                &:before{
+                    content: "\f054";
+                    font: $font-awesome;
+                    color: white;
+
+                    position: absolute;
+                    right: 0;
+                    top: 13px;
+                }
+                &:hover{
+                    &:before {
+                        content: "\f078";
+                    }
                 }
             }
 
@@ -264,10 +284,12 @@
                     width: 100%;
                     @include background-image(linear-gradient(#fade56, #fada49));
                     @include border-radius(10px 10px 0 0);
+                    font: 0/0 Arial, sans-serif;
 
                     position: absolute;
                     left: 0;
                     bottom: 100%;
+                    top: auto;
                 }
                 > a{
                     background-color: transparent;
@@ -318,10 +340,12 @@
                     width: 100%;
                     @include background-image(linear-gradient(#29abe2, #1e9bd7));
                     @include border-radius(10px 10px 0 0);
+                    font: 0/0 Arial, sans-serif;
 
                     position: absolute;
                     left: 0;
                     bottom: 100%;
+                    top: auto;
                 }
                 > a{
                     color: white;
@@ -336,7 +360,6 @@
                 .sub-menu{
                     z-index: 1000;
                     position: absolute;
-                    left: 0;
                     top: 100%;
                     height: 0;
                     overflow: hidden;
@@ -358,19 +381,22 @@
             }
             .shopping-cart{
                 a{
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: 400;
                     padding: 0 15px;
                     color: white !important;
                     background-color: #f15a24 !important;
                     &:before{
                         content: "\f07a";
-                        font: normal normal normal 16px/1 FontAwesome;
+                        font: $font-awesome;
                         display: inline-block;
                         margin-right: 7px;
                     }
                     &:hover{
                         background-color: #f14409 !important;
+                    }
+                    @include desktop{
+                        font-size: 14px;
                     }
                 }
             }
