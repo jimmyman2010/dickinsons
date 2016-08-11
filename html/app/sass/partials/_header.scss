@@ -60,40 +60,59 @@
 
     .language{
         position: relative;
-        .language--toggle{
-            display: block;
-            width: 30px;
-            height: 30px;
-            background-color: red;
-            @include border-radius(30px);
+        #lang_sel{
 
-            position: absolute;
-            right: 5px;
-            top: 5px;
-
-            &.open ~ .language--menu{
-                display: block;
-            }
-            @include tablet{
-                display: none;
-            }
         }
-        .language--menu{
-            display: none;
-            position: absolute;
-            right: 5px;
-            top: 28px;
-            margin: 15px 0;
-            @include tablet{
-                display: block;
-                position: static;
-            }
+        img{
+            width: 18px;
         }
         li{
             display: inline-block;
-            margin-left: 10px;
+            margin: 2px 2px 2px 8px;
             a{
                 color: #42403a;
+            }
+            .lang_sel_sel{
+                display: block;
+                width: 30px;
+                height: 30px;
+                text-decoration: none;
+                img{
+                    width: 30px;
+                }
+                .icl_lang_sel_current{
+                    display: none;
+                }
+                @include tablet{
+                    display: inline;
+                    width: auto;
+                    height: auto;
+                    img{
+                        width: 18px;
+                    }
+                    .icl_lang_sel_current{
+                        display: inline;
+                    }
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .open ~ ul{
+                display: inline-block;
+            }
+            ul{
+                display: none;
+                position: absolute;
+                right: 5px;
+                top: 22px;
+                margin: 15px 0;
+                width: 120px;
+                @include tablet{
+                    width: auto;
+                    display: inline-block;
+                    position: static;
+                }
             }
         }
     }
@@ -255,8 +274,11 @@
                     color: white;
 
                     position: absolute;
-                    right: 0;
+                    right: 10px;
                     top: 13px;
+                    @include desktop{
+                        display: none;
+                    }
                 }
                 &:hover{
                     &:before {

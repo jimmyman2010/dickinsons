@@ -31,7 +31,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-define('VERSION', '1.0.0');
+define('VERSION', '1.0.0.1');
 
 if ( ! function_exists( 'dickinsons_setup' ) ) :
 /**
@@ -316,5 +316,11 @@ require get_template_directory() . '/inc/remove-meta.php';
 require get_template_directory() . '/inc/recent-post.php';
 require get_template_directory() . '/inc/post-quotes.php';
 
+/**
+ * Disabling WPML’s CSS and JS files
+ */
+define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
+define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
+define('ICL_DONT_LOAD_LANGUAGES_JS', true);
 
 

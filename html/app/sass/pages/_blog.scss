@@ -259,9 +259,13 @@
 
     h2{
         font-family: $font-monarcha;
-        font-size: 40px;
-        line-height: 1.1;
+        font-size: 34px;
+        line-height: 1.2;
         color: #003E7E;
+        @include tablet{
+            font-size: 40px;
+            line-height: 1.1;
+        }
     }
     h3, h4, h5, h6{
         font-family: $font-helve;
@@ -269,20 +273,32 @@
         color: #0071BC;
     }
     h3{
-        font-size: 24px;
+        font-size: 22px;
         line-height: 1.2;
+        @include tablet {
+            font-size: 24px;
+        }
     }
     h4{
-        font-size: 21px;
+        font-size: 19px;
         line-height: 1.3;
+        @include tablet {
+            font-size: 21px;
+        }
     }
     h5{
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.5;
+        @include tablet{
+            font-size: 18px;
+        }
     }
     h6{
-        font-size: 15px;
+        font-size: 13px;
         line-height: 1.5;
+        @include tablet{
+            font-size: 15px;
+        }
     }
 }
 
@@ -291,7 +307,10 @@
 .yellow-template{
     .body{
         color: #696056;
-        font-size: 18px;
+        font-size: 16px;
+        @include tablet{
+            font-size: 18px;
+        }
 
         li:before{
             color: #62534e;
@@ -300,11 +319,13 @@
 }
 
 
-
 .blue-template{
     .body{
         color: #001b5e;
-        font-size: 18px;
+        font-size: 16px;
+        @include tablet{
+            font-size: 18px;
+        }
 
         li:before{
             color: #001b5e;

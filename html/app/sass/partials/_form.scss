@@ -154,21 +154,33 @@
     display: inline-block;
     outline: none;
     color: #fff !important;
-    height: 40px;
-    line-height: 36px;
-    font-size: 18px;
-    padding: 0 20px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 16px;
+    padding: 0 14px;
     cursor: pointer;
     text-align: center;
     @include border-radius(10px);
     @include transition(color 0.3s, background-color 0.3s, border-color 0.3s);
     text-decoration: none !important;
+    @include tablet{
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        padding: 0 20px;
+    }
 }
 
 .button--icon{
-    padding: 0 20px 0 15px;
+    padding: 0 14px 0 12px;
     i{
-        margin-right: 7px;
+        margin-right: 5px;
+    }
+    @include tablet{
+        padding: 0 20px 0 15px;
+        i{
+            margin-right: 7px;
+        }
     }
 }
 

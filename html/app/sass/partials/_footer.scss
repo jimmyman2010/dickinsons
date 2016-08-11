@@ -53,10 +53,13 @@
                 }
             }
             h3{
-                font-size: 25px;
+                font-size: 23px;
                 font-weight: 400;
                 color: #0048b0;
                 margin: 0 0 5px;
+                @include tablet{
+                    font-size: 25px;
+                }
             }
             .btn-cart{
                 margin: 0 0 15px;

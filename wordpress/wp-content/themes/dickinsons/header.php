@@ -14,6 +14,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Noticia+Text:700&subset=latin-ext,vietnamese" rel="stylesheet">
 
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -40,10 +41,7 @@
 				</div>
 				<div class="language">
 					<a href="javascript:void(0);" class="language--toggle"></a>
-					<ul class="language--menu">
-						<li><a href="#">Vietnamese</a></li>
-						<li><a href="#">English</a></li>
-					</ul>
+					<?php do_action('icl_language_selector'); ?>
 				</div>
 			</div>
 		</div>

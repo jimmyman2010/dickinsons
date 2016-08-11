@@ -42,12 +42,13 @@ var DKS = (function(){
             return {width: widthWindow, height: heightWindow};
         },
         menuToggle: function() {
-            $('.language--toggle, .toggle-main-menu').on('click', function(){
+            $('.lang_sel_sel, .toggle-main-menu').on('click', function(){
                 $(this).toggleClass('open');
+                return false;
             });
 
             $(window).on('resize', function(){
-                $('.language--toggle, .toggle-main-menu').removeClass('open');
+                $('.lang_sel_sel, .toggle-main-menu').removeClass('open');
             });
         },
 

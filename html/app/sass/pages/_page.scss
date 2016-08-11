@@ -5,10 +5,14 @@
 
 .site-title {
     position: relative;
-    padding: 10px 0 40px;
+    padding: 10px 0 5px;
     border-bottom: 1px solid #f7e181;
     @include box-shadow(0 1px 0 #f2d044);
-    margin: 0 0 50px;
+    margin: 0 0 20px;
+    @include tablet{
+        padding-bottom: 40px;
+        margin-bottom: 50px;
+    }
     .breadcrumbs {
         font-size: 14px;
         li {
@@ -35,19 +39,22 @@
         font-family: $font-monarcha;
         color: #063f78;
         text-align: center;
-        font-size: 38px;
+        font-size: 30px;
         line-height: 1;
-        margin: 0;
+        margin: 20px 0 0;
 
-        position: absolute;
-        bottom: -15px;
-        left: 0;
-        width: 100%;
-
-        span {
-            display: inline-block;
-            padding: 0 16px;
-            background-color: white;
+        @include tablet{
+            font-size: 38px;
+            margin: 0;
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            span{
+                display: inline-block;
+                padding: 0 16px;
+                background-color: white;
+            }
         }
     }
 }
