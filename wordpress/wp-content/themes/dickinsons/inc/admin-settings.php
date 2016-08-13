@@ -11,7 +11,12 @@ function my_settings_enqueue($hook) {
         return;
     }
 
+    wp_enqueue_style( 'my_settings_admin_codemirror_css', get_template_directory_uri() . '/css/codemirror.css', false, VERSION );
     wp_enqueue_style( 'my_settings_admin_css', get_template_directory_uri() . '/css/admin-style.css', false, VERSION );
+
+    wp_enqueue_script( 'my_settings_admin_codemirror_js', get_template_directory_uri() . '/js/codemirror.js', array(), VERSION, true );
+    wp_enqueue_script( 'my_settings_admin_xml_js', get_template_directory_uri() . '/js/xml.js', array(), VERSION, true );
+    wp_enqueue_script( 'my_settings_admin_js', get_template_directory_uri() . '/js/codestyle.js', array('my_settings_admin_codemirror_js', 'my_settings_admin_xml_js'), VERSION, true );
 
 }
 add_action( 'admin_enqueue_scripts', 'my_settings_enqueue' );
@@ -78,10 +83,10 @@ function dickinsons_settings_page() {
                     <tr valign="top" class="slogan">
                         <th scope="row">Slogan</th>
                         <td>
-                            <textarea name="slogan_en"><?php echo trim( get_option('slogan_en') ); ?></textarea>
+                            <textarea id="slogan_en" name="slogan_en"><?php echo trim( get_option('slogan_en') ); ?></textarea>
                         </td>
                         <td>
-                            <textarea name="slogan_vi"><?php echo trim( get_option('slogan_vi') ); ?></textarea>
+                            <textarea id="slogan_vi" name="slogan_vi"><?php echo trim( get_option('slogan_vi') ); ?></textarea>
                         </td>
                     </tr>
                 </tbody>
@@ -113,19 +118,19 @@ function dickinsons_settings_page() {
                 <tr valign="top" class="contacts">
                     <th scope="row">Contact</th>
                     <td>
-                        <textarea id="code" name="contact_en"><?php echo trim( get_option('contact_en') ); ?></textarea>
+                        <textarea id="contact_en" name="contact_en"><?php echo trim( get_option('contact_en') ); ?></textarea>
                     </td>
                     <td>
-                        <textarea name="contact_vi"><?php echo trim( get_option('contact_vi') ); ?></textarea>
+                        <textarea id="contact_vi" name="contact_vi"><?php echo trim( get_option('contact_vi') ); ?></textarea>
                     </td>
                 </tr>
                 <tr valign="top" class="copyright">
                     <th scope="row">Copyright</th>
                     <td>
-                        <textarea name="copyright_en"><?php echo trim( get_option('copyright_en') ); ?></textarea>
+                        <textarea id="copyright_en" name="copyright_en"><?php echo trim( get_option('copyright_en') ); ?></textarea>
                     </td>
                     <td>
-                        <textarea name="copyright_vi"><?php echo trim( get_option('copyright_vi') ); ?></textarea>
+                        <textarea id="copyright_vi" name="copyright_vi"><?php echo trim( get_option('copyright_vi') ); ?></textarea>
                     </td>
                 </tr>
                 <tr valign="top">
