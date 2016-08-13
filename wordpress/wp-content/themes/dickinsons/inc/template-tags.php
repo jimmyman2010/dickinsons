@@ -61,19 +61,27 @@ if ( ! function_exists( 'dickinsons_entry_date' ) ) :
  * @since Twenty Sixteen 1.0
  */
 function dickinsons_entry_date() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_html = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
-	$time_string = sprintf( $time_string,
+	$time_string = sprintf( $time_html,
 		esc_attr( get_the_date( 'c' ) ),
-		get_the_date(),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		get_the_modified_date()
+		get_the_date()
 	);
 
-	printf( '%1$s <span>%2$s</span>',
-		_x( 'Posted on', 'Used before publish date.', 'dickinsons' ),
+	if(ICL_LANGUAGE_CODE === 'vi') {
+		$date = new DateTime(get_the_date('c'));
+
+		$time_string = sprintf( $time_html,
+			esc_attr( get_the_date( 'c' ) ),
+			$date->format('d/m/Y')
+		);
+
+	}
+	printf('%1$s <span>%2$s</span>',
+		get_option('posted_on_' . ICL_LANGUAGE_CODE),
 		$time_string
 	);
+
 }
 endif;
 
@@ -142,10 +150,8 @@ if ( ! function_exists( 'dickinsons_entry_category' ) ) :
 	function dickinsons_entry_category() {
 		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dickinsons' ) );
 		if ( $categories_list && dickinsons_categorized_blog() ) {
-			printf( '%1$s %2$s',
-				_x( 'Posted in:', 'Used before category names.', 'dickinsons' ),
-				$categories_list
-			);
+
+			printf(get_option('posted_in_' . ICL_LANGUAGE_CODE) . ' %1$s', $categories_list);
 		}
 	}
 endif;

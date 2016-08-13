@@ -29,7 +29,7 @@ add_action('admin_menu', 'footer_create_menu');
 function footer_create_menu() {
 
     //create new top-level menu
-    add_menu_page('Options', 'Options', 'administrator', 'dickinsons-settings', 'dickinsons_settings_page' );
+    add_menu_page('Translation', 'Translation', 'administrator', 'dickinsons-settings', 'dickinsons_settings_page' );
 
     //call register settings function
     add_action( 'admin_init', 'register_dickinsons_settings' );
@@ -37,10 +37,15 @@ function footer_create_menu() {
 
 
 function register_dickinsons_settings() {
-    //register our settings
+    //register header settings
     register_setting( 'dickinsons-settings-header', 'slogan_en' );
     register_setting( 'dickinsons-settings-header', 'slogan_vi' );
 
+    //register sidebar settings
+    register_setting( 'dickinsons-settings-sidebar', 'our_products_en' );
+    register_setting( 'dickinsons-settings-sidebar', 'our_products_vi' );
+
+    //register footer settings
     register_setting( 'dickinsons-settings-footer', 'contact_en' );
     register_setting( 'dickinsons-settings-footer', 'contact_vi' );
 
@@ -55,13 +60,25 @@ function register_dickinsons_settings() {
 
     register_setting( 'dickinsons-settings-footer', 'all_articles_link_en' );
     register_setting( 'dickinsons-settings-footer', 'all_articles_link_vi' );
+
+    //register other settings
+    register_setting( 'dickinsons-settings-other', 'posted_on_en' );
+    register_setting( 'dickinsons-settings-other', 'posted_on_vi' );
+
+    register_setting( 'dickinsons-settings-other', 'posted_in_en' );
+    register_setting( 'dickinsons-settings-other', 'posted_in_vi' );
+
+    register_setting( 'dickinsons-settings-other', 'related_reads_en' );
+    register_setting( 'dickinsons-settings-other', 'related_reads_vi' );
 }
 
 function dickinsons_settings_page() {
     ?>
     <div class="wrap">
         <h1>Options</h1>
-        <h2>Header Settings</h2>
+
+        <hr>
+        <h2>Header</h2>
 
         <form method="post" action="options.php">
             <?php settings_fields( 'dickinsons-settings-header' ); ?>
@@ -96,7 +113,44 @@ function dickinsons_settings_page() {
 
         </form>
 
-        <h2>Footer Settings</h2>
+        <hr>
+        <h2>Sidebar</h2>
+
+        <form method="post" action="options.php">
+            <?php settings_fields( 'dickinsons-settings-sidebar' ); ?>
+            <?php do_settings_sections( 'dickinsons-settings-sidebar' ); ?>
+            <table class="form-table my-settings">
+                <colgroup>
+                    <col width="12%"/>
+                    <col width="44%"/>
+                    <col width="44%"/>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>English</th>
+                    <th>Vietnamese</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Our Products</th>
+                    <td>
+                        <textarea id="our_products_en" name="our_products_en"><?php echo trim( get_option('our_products_en') ); ?></textarea>
+                    </td>
+                    <td>
+                        <textarea id="our_products_vi" name="our_products_vi"><?php echo trim( get_option('our_products_vi') ); ?></textarea>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <?php submit_button(); ?>
+
+        </form>
+
+        <hr>
+        <h2>Footer</h2>
 
         <form method="post" action="options.php">
             <?php settings_fields( 'dickinsons-settings-footer' ); ?>
@@ -158,6 +212,61 @@ function dickinsons_settings_page() {
                     </td>
                     <td>
                         <input type="text" name="all_articles_link_vi" value="<?php echo trim( get_option('all_articles_link_vi') ); ?>" />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <?php submit_button(); ?>
+
+        </form>
+
+
+        <hr>
+        <h2>Other</h2>
+
+        <form method="post" action="options.php">
+            <?php settings_fields( 'dickinsons-settings-other' ); ?>
+            <?php do_settings_sections( 'dickinsons-settings-other' ); ?>
+            <table class="form-table my-settings">
+                <colgroup>
+                    <col width="12%"/>
+                    <col width="44%"/>
+                    <col width="44%"/>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>English</th>
+                    <th>Vietnamese</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr valign="top">
+                    <th scope="row">Posted on</th>
+                    <td>
+                        <input type="text" name="posted_on_en" value="<?php echo trim( get_option('posted_on_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="posted_on_vi" value="<?php echo trim( get_option('posted_on_vi') ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">Posted in</th>
+                    <td>
+                        <input type="text" name="posted_in_en" value="<?php echo trim( get_option('posted_in_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="posted_in_vi" value="<?php echo trim( get_option('posted_in_vi') ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">Related reads</th>
+                    <td>
+                        <input type="text" name="related_reads_en" value="<?php echo trim( get_option('related_reads_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="related_reads_vi" value="<?php echo trim( get_option('related_reads_vi') ); ?>" />
                     </td>
                 </tr>
                 </tbody>

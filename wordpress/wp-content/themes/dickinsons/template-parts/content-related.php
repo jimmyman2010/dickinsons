@@ -25,7 +25,7 @@ if ($tags) {
 	if ( $my_query->have_posts() ) : ?>
 
 <div class="module module--related-news">
-	<h3 class="module--title">Related reads</h3>
+	<h3 class="module--title"><?= get_option('related_reads_' . ICL_LANGUAGE_CODE) ?></h3>
 	<ul>
 			<?php while( $my_query->have_posts() ) {
 				$my_query->the_post();

@@ -11,13 +11,7 @@
 	<aside class="left-rail" role="complementary">
 		<?php dynamic_sidebar( 'sidebar' ); ?>
 
-		<div class="module module--products">
-			<h3 class="module--title">Our Products</h3>
-			<div class="module--content">
-				<a href="#" class="button button--yellow">Yellow Label Products</a>
-				<a href="#" class="button button--blue">Blue Label Products</a>
-			</div>
-		</div>
+		<?= get_option('our_products_' . ICL_LANGUAGE_CODE) ?>
 
 	</aside>
 <?php endif; ?>

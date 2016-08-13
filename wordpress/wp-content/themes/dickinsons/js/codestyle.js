@@ -45,3 +45,20 @@ CodeMirror.fromTextArea(document.getElementById('copyright_vi'), {
     mode: 'xml',
     htmlMode: true
 });
+
+
+
+
+CodeMirror.fromTextArea(document.getElementById('our_products_en'), {
+    lineNumbers: true,
+    lineWrapping: true,
+    mode: 'xml',
+    htmlMode: true
+});
+
+CodeMirror.fromTextArea(document.getElementById('our_products_vi'), {
+    lineNumbers: true,
+    lineWrapping: true,
+    mode: 'xml',
+    htmlMode: true
+});
