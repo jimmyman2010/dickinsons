@@ -15,23 +15,12 @@
 			<div class="container">
 				<div class="three-column">
 					<div class="contact">
-						<p class="btn-cart">
-							<a href="#" class="button button--red button--icon"><i class="fa fa-shopping-cart"></i> Where to buy</a>
-						</p>
-						<h3>Contact</h3>
-						<p>561 Điện Biên Phủ, Phường 25, Bình Thạnh, Hồ Chí Minh, Vietnam
-							<br>email: <a href="mailto:info@dickinsonsbrands.vn">info@dickinsonsbrands.vn</a>
-							<br>phone: +84 098 888 888</p>
-						<p class="btn-envelope"><a href="#" class="button button--yellow button--icon"><i class="fa fa-envelope-o"></i>Contact us</a></p>
-						<p class="follows">
-							<a href="#" class="facebook"><img src="<?= get_template_directory_uri(); ?>/images/follow-facebook.jpg" alt="Follow us on Facebook" /></a>
-							<a href="#" class="twitter"><img src="<?= get_template_directory_uri(); ?>/images/follow-twitter.jpg" alt="follow us on Twitter" /></a>
-						</p>
+						<?= get_option('contact_' . ICL_LANGUAGE_CODE) ?>
 					</div>
 
 					<div class="latest-news">
 						<?php echo dickinsons_recent_post(); ?>
-						<a href="/blog" class="button button--yellow button--icon"><i class="fa fa-newspaper-o"></i> All articles</a>
+						<a href="<?= get_option('all_articles_link_' . ICL_LANGUAGE_CODE) ?>" class="button button--yellow button--icon"><i class="fa fa-newspaper-o"></i> <?= get_option('all_articles_' . ICL_LANGUAGE_CODE) ?></a>
 					</div>
 
 					<div class="quotes">
@@ -61,9 +50,9 @@
 				} ?>
 
 				<div class="copy">
-					<p>&copy; 2016 Dickinson Brands Inc., All Rights Reserved.
-						<br>This site is published by Dickinson Brands VN and is intended for visitors
-						<br>from the Vietnam only.</p>
+					<p>
+						<?= get_option('copyright_' . ICL_LANGUAGE_CODE) ?>
+					</p>
 				</div>
 			</div>
 		</section>

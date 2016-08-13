@@ -315,6 +315,7 @@ require get_template_directory() . '/inc/remove-meta.php';
 
 require get_template_directory() . '/inc/recent-post.php';
 require get_template_directory() . '/inc/post-quotes.php';
+require get_template_directory() . '/inc/admin-settings.php';
 
 /**
  * Disabling WPML’s CSS and JS files

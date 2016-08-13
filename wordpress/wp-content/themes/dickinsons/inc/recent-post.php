@@ -12,7 +12,7 @@ function dickinsons_recent_post(){
         'post_status' => 'publish',
     ]);
 
-    $latest_news = '<h3>Our Blog</h3><ul>';
+    $latest_news = '<h3>' . get_option('our_blog_' . ICL_LANGUAGE_CODE) . '</h3><ul>';
 
     foreach( $recent_posts as $recent ){
         $latest_news .= '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';

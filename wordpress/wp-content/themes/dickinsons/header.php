@@ -29,16 +29,7 @@
 		<div class="container clearfix">
 			<a href="<?= esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?= get_template_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo( 'name' ); ?>" /></a>
 			<div class="meta-info">
-				<div class="slogan">
-					<p class="h1"><?php bloginfo( 'description' ); ?></p>
-					<div>
-						<p>Share the Power of Witch Hazel</p>
-                        <span>
-                            <a href="#" class="facebook"><i class="fa fa-facebook-square"></i></a>
-                            <a href="#" class="email"><i class="fa fa-envelope-o"></i></a>
-                        </span>
-					</div>
-				</div>
+				<?= get_option('slogan_' . ICL_LANGUAGE_CODE) ?>
 				<div class="language">
 					<a href="javascript:void(0);" class="language--toggle"></a>
 					<?php do_action('icl_language_selector'); ?>
