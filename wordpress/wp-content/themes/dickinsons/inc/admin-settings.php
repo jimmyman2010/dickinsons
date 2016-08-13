@@ -68,9 +68,9 @@ function dickinsons_settings_page() {
             <?php do_settings_sections( 'dickinsons-settings-header' ); ?>
             <table class="form-table my-settings">
                 <colgroup>
-                    <col width="16%"/>
-                    <col width="42%"/>
-                    <col width="42%"/>
+                    <col width="12%"/>
+                    <col width="44%"/>
+                    <col width="44%"/>
                 </colgroup>
                 <thead>
                     <tr>
@@ -103,9 +103,9 @@ function dickinsons_settings_page() {
             <?php do_settings_sections( 'dickinsons-settings-footer' ); ?>
             <table class="form-table my-settings">
                 <colgroup>
-                    <col width="16%"/>
-                    <col width="42%"/>
-                    <col width="42%"/>
+                    <col width="12%"/>
+                    <col width="44%"/>
+                    <col width="44%"/>
                 </colgroup>
                 <thead>
                 <tr>
