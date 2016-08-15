@@ -259,6 +259,7 @@
 
     h2{
         font-family: $font-monarcha;
+        @include transform(skew(-2deg));
         font-size: 34px;
         line-height: 1.1;
         color: #003E7E;

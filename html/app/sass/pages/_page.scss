@@ -43,6 +43,7 @@
 
     .title {
         font-family: $font-monarcha;
+        @include transform(skew(-2deg));
         color: #063f78;
         text-align: center;
         font-size: 30px;
