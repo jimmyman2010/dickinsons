@@ -420,7 +420,7 @@ function wpml_strip_subdir_from_url( $url ) {
  * @param string $format %s or %d
  * @return string Items separated by comma and sql-escaped 
  */
-function wpml_prepare_in(array $items, $format = '%s') { 
+/*function wpml_prepare_in(array $items, $format = '%s') {
 	global $wpdb;
 	
 	$how_many = count($items);
@@ -429,7 +429,24 @@ function wpml_prepare_in(array $items, $format = '%s') {
 	$prepared_in = $wpdb->prepare($prepared_format, $items);
 	
 	return $prepared_in;
+}*/
+
+function wpml_prepare_in( $items, $format = '%s' ) {
+    global $wpdb;
+
+    $items    = (array) $items;
+    $how_many = count( $items );
+    if ( $how_many > 0 ) {
+        $placeholders    = array_fill( 0, $how_many, $format );
+        $prepared_format = implode( ",", $placeholders );
+        $prepared_in     = $wpdb->prepare( $prepared_format, $items );
+    } else {
+        $prepared_in = "";
+    }
+
+    return $prepared_in;
 }
+
 
 function wpml_missing_filter_input_notice() {
     ?>
