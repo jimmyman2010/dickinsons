@@ -200,19 +200,20 @@
             background-color: white;
             position: relative;
             cursor: pointer;
+            z-index: 5;
             min-width: 275px;
             &:after{
                 content: '';
                 display: block;
                 width: 0;
                 height: 0;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
-                border-top: 5px solid #496074;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 7px solid #496074;
 
                 position: absolute;
                 right: 30px;
-                top: 19px;
+                top: 18px;
             }
 
             &.open ~ .menu-dropdown-selector-container .menu{
@@ -225,6 +226,7 @@
             .menu{
                 display: none;
                 position: absolute;
+                z-index: 5;
                 background-color: white;
                 border: 1px solid #f5efd3;
                 top: -1px;
