@@ -428,7 +428,7 @@
                     font-weight: 400;
                     padding: 0 11px;
                     color: white !important;
-                    background-color: #f15a24 !important;
+                    background-color: #bd0009 !important;
                     &:before{
                         content: "\f07a";
                         font: $font-awesome;
@@ -436,7 +436,7 @@
                         margin-right: 7px;
                     }
                     &:hover{
-                        background-color: #f14409 !important;
+                        background-color: #e40013 !important;
                     }
                     @include desktop{
                         font-size: 14px;
@@ -452,7 +452,7 @@
 
 .blue-template{
     .site-menu {
-        background-color: #BBDAFC;
+        background: #BBDAFC;
         .bar {
             background-color: $color-blue;
         }

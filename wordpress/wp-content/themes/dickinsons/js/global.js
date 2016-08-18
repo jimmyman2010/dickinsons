@@ -42,13 +42,13 @@ var DKS = (function(){
             return {width: widthWindow, height: heightWindow};
         },
         menuToggle: function() {
-            $('.lang_sel_sel, .toggle-main-menu').on('click', function(){
+            $('.lang_sel_sel, .toggle-main-menu, .panel-grid-cell .widget_nav_menu .widget-title').on('click', function(){
                 $(this).toggleClass('open');
                 return false;
             });
 
             $(window).on('resize', function(){
-                $('.lang_sel_sel, .toggle-main-menu').removeClass('open');
+                $('.lang_sel_sel, .toggle-main-menu, .panel-grid-cell .widget_nav_menu .widget-title').removeClass('open');
             });
         },
 
