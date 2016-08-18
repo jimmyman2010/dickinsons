@@ -31,7 +31,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-define('VERSION', '1.0.0.8');
+define('VERSION', '1.0.1.4');
 
 if ( ! function_exists( 'dickinsons_setup' ) ) :
 /**
@@ -323,5 +323,14 @@ require get_template_directory() . '/inc/admin-settings.php';
 define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
 define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 define('ICL_DONT_LOAD_LANGUAGES_JS', true);
+
+/**
+ * language
+ */
+add_filter('body_class','browser_body_class');
+function browser_body_class($classes = '') {
+	$classes[] = 'lang-' . ICL_LANGUAGE_CODE;
+	return $classes;
+}
 
 

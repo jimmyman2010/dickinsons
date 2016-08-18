@@ -10,10 +10,10 @@
     .logo{
         float: left;
         margin: 0 5px 35px;
-        width: 160px;
+        width: 156px;
         @include tablet {
             margin: 0 5px 30px;
-            width: auto;
+            width: 190px;
         }
     }
     .meta-info{
@@ -33,7 +33,7 @@
             font-weight: 700;
         }
         div{
-            font-weight: 700;
+            font-weight: 600;
             color: #1e4c82;
             position: relative;
             padding-right: 55px;
@@ -74,11 +74,11 @@
             }
             .lang_sel_sel{
                 display: block;
-                width: 30px;
-                height: 30px;
+                width: 40px;
+                height: 40px;
                 text-decoration: none;
                 img{
-                    width: 30px;
+                    width: 40px;
                 }
                 .icl_lang_sel_current{
                     display: none;
@@ -119,11 +119,9 @@
 
 
 
-
-
-
     .site-menu{
         background-color: #988675;
+        @include background-image(linear-gradient(#635043, #746055 42%, #877267 43%, #6b5a4f 100%));
         .container{
             padding-left: 0;
             padding-right: 0;
@@ -142,23 +140,41 @@
         .toggle-main-menu{
             float: right;
             width: 52px;
+            height: 37px;
             padding: 5px 10px;
             span{
-                display: block;
+                float: right;
                 height: 4px;
-                margin: 5px 0;
+                width: 100%;
+                margin: 2px 0 3px;
                 background-color: white;
                 @include border-radius(1px);
+                &:nth-child(2){
+                    width: 70%;
+                }
             }
             @include desktop{
                 display: none;
             }
 
-            &.open ~ .main-menu-wrap .main-menu {
-                padding: 10px;
-                @include border-radius(0 0 20px 20px);
-                > .menu-item {
-                    display: block;
+            &.open {
+                span{
+                    &:nth-child(1){
+                        @include transform(rotate(43deg) translate(6px, 6px));
+                    }
+                    &:nth-child(2){
+                        width: 0;
+                    }
+                    &:nth-child(3){
+                        @include transform(rotate(-47deg));
+                    }
+                }
+                ~ .main-menu-wrap .main-menu {
+                    padding: 10px;
+                    @include border-radius(0 0 20px 20px);
+                    > .menu-item {
+                        display: block;
+                    }
                 }
             }
         }
@@ -182,22 +198,24 @@
             @include clearfix;
 
             background-color: #988675;
+            @include desktop{
+                background-color: transparent;
+            }
 
             > .menu-item{
                 display: none;
                 position: relative;
-                padding: 6px 4px;
+                padding: 6px 5px;
                 font-size: 16px;
-                font-weight: 600;
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
                 &:first-child{
                     border-top: none;
                 }
                 @include desktop{
-                    font-size: 14px;
+                    font-size: 15px;
                     float: left;
                     display: block;
-                    padding: 12px 4px;
+                    padding: 12px 6px;
                     border-top: none;
                 }
                 > a{
@@ -205,7 +223,7 @@
                     height: 30px;
                     line-height: 30px;
                     color: white;
-                    padding: 0 15px;
+                    padding: 0 12px;
                     @include border-radius(10px);
 
                     &:hover{
@@ -300,7 +318,7 @@
                 @include desktop {
                     position: relative;
                     top:auto;
-                    left: auto;
+                    left: auto !important;
                 }
                 &:before{
                     content: '';
@@ -350,13 +368,13 @@
                 display: block;
                 position: absolute;
                 top: -50px;
-                left: 120px;
+                left: 114px;
                 @include background-image(linear-gradient(#1e9bd7, #0071bc));
                 border-top: none;
                 @include desktop {
                     position: relative;
                     top:auto;
-                    left: auto;
+                    left: auto !important;
                 }
                 &:before{
                     content: '';
@@ -408,7 +426,7 @@
                 a{
                     font-size: 16px;
                     font-weight: 400;
-                    padding: 0 15px;
+                    padding: 0 11px;
                     color: white !important;
                     background-color: #f15a24 !important;
                     &:before{
@@ -483,6 +501,22 @@
                     }
                 }
             }
+        }
+    }
+}
+
+
+
+.lang-vi{
+    .site-header .site-menu .main-menu {
+        > .menu-item {
+            padding: 6px 0;
+            @include desktop {
+                padding: 12px 2px;
+            }
+        }
+        .blue-label{
+            left: 130px;
         }
     }
 }

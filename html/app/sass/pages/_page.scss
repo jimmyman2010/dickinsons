@@ -5,7 +5,7 @@
 
 .site-title {
     position: relative;
-    padding: 10px 0 5px;
+    padding: 15px 0 5px;
     border-bottom: 1px solid #f7e181;
     @include box-shadow(0 1px 0 #f2d044);
     margin: 0 0 20px;
@@ -36,9 +36,6 @@
         a {
             text-decoration: underline;
         }
-        span {
-            font-weight: 600;
-        }
     }
 
     .title {
@@ -46,12 +43,12 @@
         @include transform(skew(-2deg));
         color: #063f78;
         text-align: center;
-        font-size: 30px;
+        font-size: 28px;
         line-height: 1;
         margin: 20px 0 0;
 
         @include tablet{
-            font-size: 38px;
+            font-size: 34px;
             margin: 0;
             position: absolute;
             bottom: -15px;
