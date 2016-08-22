@@ -12,7 +12,9 @@ get_header(); ?>
 	<div class="container">
 		<div class="site-title">
 			<?php dickinsons_the_breadcrumbs(); ?>
-			<h1 class="title"><span><?php _e( 'Page not found.', 'dickinsons' ); ?></span></h1>
+			<h1 class="title"><span>
+				<?php _e( 'Page not found.', 'dickinsons' ); ?>
+			</span><img src="<?= get_template_directory_uri(); ?>/images/flower-bracket.png" alt=""/></h1>
 		</div>
 	</div>
 	<div class="main-container clearfix">

@@ -21,7 +21,9 @@ get_header(); ?>
 	<div class="container">
 		<div class="site-title">
 			<?php dickinsons_the_breadcrumbs(); ?>
-			<?php the_archive_title( '<h1 class="title"><span>', '</span></h1>' ); ?>
+			<h1 class="title"><span>
+				<?php the_archive_title(); ?>
+			</span><img src="<?= get_template_directory_uri(); ?>/images/flower-bracket.png" alt=""/></h1>
 		</div>
 		<div class="main-container clearfix">
 
