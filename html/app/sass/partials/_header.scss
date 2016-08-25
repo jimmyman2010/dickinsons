@@ -33,27 +33,29 @@
             font-weight: 700;
         }
         div{
-            font-weight: 600;
             color: #1e4c82;
-            position: relative;
-            padding-right: 55px;
+            font-weight: 600;
 
-            span{
-                display: inline-block;
-                position: absolute;
-                top: -3px;
-                right: -3px;
-                font-size: 18px;
-            }
-            a{
-                display: inline-block;
-                margin: 0 3px;
-            }
-            .facebook{
-                color: #436eb1;
-            }
-            .email{
-                color: #b6b6b8;
+            .sn{
+                line-height: 23px;
+                a{
+                    display: inline-block;
+                    margin: 0 0 0 5px;
+                    width: 23px;
+                    height: 23px;
+                    text-align: center;
+                    @include border-radius(23px);
+                    color: white;
+                }
+                .sn--tw{
+                    background-color: #64a7f5;
+                }
+                .sn--fb{
+                    background-color: #3b5999;
+                }
+                .sn--in{
+                    background-color: #d0011b;
+                }
             }
         }
     }

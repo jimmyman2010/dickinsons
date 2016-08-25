@@ -31,7 +31,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-define('VERSION', '1.0.2.4');
+define('VERSION', '1.0.2.7');
 
 if ( ! function_exists( 'dickinsons_setup' ) ) :
 /**
@@ -334,3 +334,20 @@ function browser_body_class($classes = '') {
 }
 
 
+
+
+// add new buttons
+add_filter( 'mce_buttons', 'advlink_register_buttons' );
+
+function advlink_register_buttons( $buttons ) {
+	array_push( $buttons, 'separator', 'advlink' );
+	return $buttons;
+}
+
+// Load the TinyMCE plugin : advlink.js (wp2.5)
+add_filter( 'mce_external_plugins', 'advlink_register_tinymce_javascript' );
+
+function advlink_register_tinymce_javascript( $plugins ) {
+	$plugins['advlink'] = get_template_directory_uri() . '/plugins/advlink/plugin.js';
+	return $plugins;
+}

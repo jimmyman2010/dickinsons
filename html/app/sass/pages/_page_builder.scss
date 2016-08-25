@@ -168,7 +168,6 @@
         display: inline-block;
         margin: 0 10px 10px;
         .button {
-            @include border-radius(22px);
             padding: 0;
             a {
                 background: none;
@@ -182,6 +181,11 @@
                 &:hover{
                     background: none;
                 }
+            }
+        }
+        .button--large{
+            a {
+                padding: 0 40px;
             }
         }
         .button--gray{
@@ -254,3 +258,10 @@
     }
 }
 
+
+.cover .sow-image-container{
+    @include tablet {
+        opacity: 0;
+        @include transition(opacity 0.3s);
+    }
+}
