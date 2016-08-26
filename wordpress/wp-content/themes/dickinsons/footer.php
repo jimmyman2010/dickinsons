@@ -10,49 +10,63 @@
 ?>
 
 	<footer class="site-footer">
+
+		<section class="subscribe">
+			<div class="container">
+				<div class="subscribe-form">
+					<?= get_option('subscribe_' . ICL_LANGUAGE_CODE) ?>
+				</div>
+			</div>
+		</section>
+		<div class="bar"></div>
+		<section class="socials-network">
+			<div class="container">
+				<p class="copy"><?= get_option('connect_with_us_' . ICL_LANGUAGE_CODE) ?></p>
+				<p class="socials">
+					<a href="#"><i class="fa fa-instagram"></i></a>
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-skype"></i></a>
+				</p>
+				<?php
+				if ( has_nav_menu( 'footer_horizontal' ) ) {
+					wp_nav_menu( array(
+						'theme_location' => 'footer_horizontal',
+						'menu_class' => 'nav',
+						'container' => 'ul'
+					) );
+				} ?>
+			</div>
+		</section>
 		<section class="footer--info">
-			<div class="bar"></div>
 			<div class="container">
 				<div class="three-column">
+					<div class="information">
+						<h3><?= get_option('information_' . ICL_LANGUAGE_CODE) ?></h3>
+						<?php
+						if ( has_nav_menu( 'footer' ) ) {
+							wp_nav_menu( array(
+								'theme_location' => 'footer',
+								'menu_class' => 'nav',
+								'container' => 'ul'
+							) );
+						} ?>
+					</div>
 					<div class="contact">
 						<?= get_option('contact_' . ICL_LANGUAGE_CODE) ?>
 					</div>
 
 					<div class="latest-news">
 						<?php echo dickinsons_recent_post(); ?>
-						<a href="<?= get_option('all_articles_link_' . ICL_LANGUAGE_CODE) ?>" class="button button--yellow button--icon"><i class="fa fa-newspaper-o"></i> <?= get_option('all_articles_' . ICL_LANGUAGE_CODE) ?></a>
-					</div>
-
-					<div class="quotes">
-						<?php echo ab_arq_generate(); ?>
+						<a href="<?= get_option('all_articles_link_' . ICL_LANGUAGE_CODE) ?>" class="view-all">
+							<i class="fa fa-newspaper-o"></i> <?= get_option('all_articles_' . ICL_LANGUAGE_CODE) ?>
+						</a>
 					</div>
 				</div>
-				<div class="subscribe">
-					<div class="subscribe-form">
-						<p>Subscribe to our mailing list</p>
-						<div class="form">
-							<input type="text" placeholder="email address" />
-							<button>Subscribe</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="copyright">
-			<div class="container clearfix">
-				<?php
-				if ( has_nav_menu( 'footer' ) ) {
-					wp_nav_menu( array(
-						'theme_location' => 'footer',
-						'menu_class' => 'nav',
-						'container' => 'ul'
-					) );
-				} ?>
 
-				<div class="copy">
-					<p>
-						<?= get_option('copyright_' . ICL_LANGUAGE_CODE) ?>
-					</p>
+
+				<div class="copyright">
+					<?= get_option('copyright_' . ICL_LANGUAGE_CODE) ?>
 				</div>
 			</div>
 		</section>

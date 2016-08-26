@@ -45,12 +45,22 @@ function register_dickinsons_settings() {
     register_setting( 'dickinsons-settings-sidebar', 'our_products_en' );
     register_setting( 'dickinsons-settings-sidebar', 'our_products_vi' );
 
+    //register subscribe settings
+    register_setting( 'dickinsons-settings-subscribe', 'subscribe_en' );
+    register_setting( 'dickinsons-settings-subscribe', 'subscribe_vi' );
+
     //register footer settings
+    register_setting( 'dickinsons-settings-footer', 'connect_with_us_en' );
+    register_setting( 'dickinsons-settings-footer', 'connect_with_us_vi' );
+
     register_setting( 'dickinsons-settings-footer', 'contact_en' );
     register_setting( 'dickinsons-settings-footer', 'contact_vi' );
 
     register_setting( 'dickinsons-settings-footer', 'copyright_en' );
     register_setting( 'dickinsons-settings-footer', 'copyright_vi' );
+
+    register_setting( 'dickinsons-settings-footer', 'information_en' );
+    register_setting( 'dickinsons-settings-footer', 'information_vi' );
 
     register_setting( 'dickinsons-settings-footer', 'our_blog_en' );
     register_setting( 'dickinsons-settings-footer', 'our_blog_vi' );
@@ -150,6 +160,41 @@ function dickinsons_settings_page() {
         </form>
 
         <hr>
+        <h2>Subscribe</h2>
+        <form method="post" action="options.php">
+            <?php settings_fields( 'dickinsons-settings-subscribe' ); ?>
+            <?php do_settings_sections( 'dickinsons-settings-subscribe' ); ?>
+            <table class="form-table my-settings">
+                <colgroup>
+                    <col width="12%"/>
+                    <col width="44%"/>
+                    <col width="44%"/>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>English</th>
+                    <th>Vietnamese</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr valign="top" class="contacts">
+                    <th scope="row">Subscribe</th>
+                    <td>
+                        <textarea id="subscribe_en" name="subscribe_en"><?php echo trim( get_option('subscribe_en') ); ?></textarea>
+                    </td>
+                    <td>
+                        <textarea id="subscribe_vi" name="subscribe_vi"><?php echo trim( get_option('subscribe_vi') ); ?></textarea>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <?php submit_button(); ?>
+
+        </form>
+
+        <hr>
         <h2>Footer</h2>
 
         <form method="post" action="options.php">
@@ -170,6 +215,15 @@ function dickinsons_settings_page() {
                 </thead>
                 <tbody>
                 <tr valign="top" class="contacts">
+                    <th scope="row">Connect with Us</th>
+                    <td>
+                        <textarea id="connect_with_us_en" name="connect_with_us_en"><?php echo trim( get_option('connect_with_us_en') ); ?></textarea>
+                    </td>
+                    <td>
+                        <textarea id="connect_with_us_vi" name="connect_with_us_vi"><?php echo trim( get_option('connect_with_us_vi') ); ?></textarea>
+                    </td>
+                </tr>
+                <tr valign="top" class="contacts">
                     <th scope="row">Contact</th>
                     <td>
                         <textarea id="contact_en" name="contact_en"><?php echo trim( get_option('contact_en') ); ?></textarea>
@@ -185,6 +239,15 @@ function dickinsons_settings_page() {
                     </td>
                     <td>
                         <textarea id="copyright_vi" name="copyright_vi"><?php echo trim( get_option('copyright_vi') ); ?></textarea>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">Information</th>
+                    <td>
+                        <input type="text" name="information_en" value="<?php echo trim( get_option('information_en') ); ?>" />
+                    </td>
+                    <td>
+                        <input type="text" name="information_vi" value="<?php echo trim( get_option('information_vi') ); ?>" />
                     </td>
                 </tr>
                 <tr valign="top">

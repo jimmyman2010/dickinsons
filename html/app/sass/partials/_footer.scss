@@ -11,26 +11,187 @@
             height: 14px;
         }
     }
+
+    .subscribe{
+        .subscribe-form{
+            border-top: 1px solid #fde9a8;
+            @include box-shadow(0 -1px 0 #facd34);
+            padding: 30px 0 40px;
+            @include clearfix;
+            .copy{
+                padding-bottom: 15px;
+                @include desktop {
+                    padding-bottom: 0;
+                    float: left;
+                    width: 460px;
+                }
+                h4{
+                    font-size: 23px;
+                    color: #00367a;
+                    margin: 0;
+                    font-family: $font-monarcha;
+                    @include tablet{
+                        font-size: 26px;
+                    }
+                }
+            }
+
+            .form{
+                @include desktop {
+                    float: right;
+                    width: 520px;
+                }
+            }
+
+            .wrap-input{
+                position: relative;
+                i{
+                    position: absolute;
+                    right: 10px;
+                    top: 15px;
+                    color: #9b9b9b;
+                }
+
+                @include tablet{
+                    display: inline-block;
+                    i {
+                        right: 20px;
+                        top: 20px;
+                    }
+                }
+
+                input{
+                    font-size: 14px;
+                    width: 100%;
+                    height: 44px;
+                    line-height: 44px;
+                    border: 2px solid #d4d4d4;
+                    background: white;
+                    padding: 0 30px 0 10px;
+                    @include tablet{
+                        font-size: 16px;
+                        height: 58px;
+                        line-height: 58px;
+                        width: 334px;
+                        padding: 0 40px 0 20px;
+                    }
+                }
+            }
+            button{
+                display: inline-block;
+                outline: none;
+                color: #000;
+                height: 44px;
+                line-height: 44px;
+                font-size: 15px;
+                padding: 0 20px;
+                cursor: pointer;
+                text-align: center;
+                letter-spacing: 0.04em;
+                border: none;
+                @include border-radius(60px);
+                @include transition(color 0.3s, background-color 0.3s, border-color 0.3s);
+                text-decoration: none !important;
+                margin: 10px 0 0;
+                @include tablet{
+                    height: 56px;
+                    line-height: 56px;
+                    font-size: 18px;
+                    padding: 0 30px;
+                    margin: 0 0 0 10px;
+                }
+            }
+        }
+    }
+
+    .socials-network{
+        background-color: #696156;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        @include tablet{
+            font-size: 18px;
+        }
+        a{
+            color: white;
+        }
+        .copy{
+            padding: 25px 0;
+        }
+        .socials{
+            font-size: 40px;
+            a{
+                display: inline-block;
+                margin: 0 10px;
+            }
+            @include tablet{
+                font-size: 46px;
+            }
+        }
+        .nav{
+            padding: 35px 0 25px;
+            font-weight: 600;
+            .menu-item{
+                display: inline-block;
+                margin:  0 10px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
     .footer--info{
-        @include background-image(linear-gradient(#f7f0d0, #ffffff));
+        background-color: #f9f3db;
+        color: #7e716b;
         .three-column{
             padding: 0 0 40px;
             @extend .clearfix;
-            color: #483d39;
+            a {
+                color: inherit;
+            }
             > div{
                 margin-top: 30px;
                 @include tablet {
                     float: left;
                 }
             }
-            .contact{
-                line-height: 1.5;
+
+            h3{
+                font-size: 16px;
+                font-weight: 600;
+                color: #31363c;
+                margin: 0 0 20px;
                 @include tablet{
-                    width: 50%;
-                    padding-right: 20px;
+                    font-size: 20px;
+                }
+            }
+            ul{
+                margin: 0 0 20px;
+            }
+
+            .information{
+                @include tablet{
+                    display: none;
                 }
                 @include desktop {
-                    width: 33.33%;
+                    display: block;
+                    width: 25%;
+                }
+                li {
+                    margin: 15px 0;
+                }
+            }
+            .contact{
+                @include tablet{
+                    width: 50%;
+                    padding-left: 20px;
+                }
+                @include desktop {
+                    width: 25%;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                p{
+                    margin: 15px 0;
                 }
             }
             .latest-news{
@@ -39,168 +200,52 @@
                     padding-left: 20px;
                 }
                 @include desktop {
-                    width: 33.33%;
                     padding-left: 10px;
-                    padding-right: 10px;
                 }
-            }
-            .quotes{
-                display: none;
-                @include desktop {
-                    display: block;
-                    width: 33.33%;
-                    padding-left: 20px;
-                }
-            }
-            h3{
-                font-size: 23px;
-                font-weight: 400;
-                color: #0048b0;
-                margin: 0 0 5px;
-                @include tablet{
-                    font-size: 25px;
-                }
-            }
-            .btn-cart{
-                margin: 0 0 15px;
-            }
-            .btn-envelope{
-                margin: 15px 0;
-            }
-            .follows{
-                a{
-                    display: inline-block;
-                    padding: 8px 3px;
-                    @include tablet {
-                        padding: 8px 10px;
+
+
+                li{
+                    @include clearfix;
+                    border-bottom: 1px solid #e7e1cb;
+                    margin-bottom: 15px;
+                    padding-bottom: 8px;
+                    figure{
+                        float: left;
+                        margin: 0 20px 10px 0;
+                    }
+                    h4{
+                        margin: 0;
+                        font-weight: 600;
+                    }
+                    p{
+                        margin: 5px 0;
                     }
                 }
-                .facebook{
-                    padding-left: 0;
+
+                .view-all{
+                    font-weight: 600;
+                    i{
+                        font-size: 1.3em;
+                        margin-right: 5px;
+                    }
                 }
-                .twitter{
-                    background-color: white;
-                }
-            }
-            ul{
-                margin: 0 0 20px;
-            }
-            li{
-                margin: 10px 0;
-                padding-left: 20px;
-                position: relative;
-                &:before{
-                    content:"\2022";
-                    color: #4e4b4c;
-                    font-size: 26px;
-                    font-family: Arial, sans-serif;
-
-                    position: absolute;
-                    left: 3px;
-                    top: -6px;
-                }
-            }
-        }
-
-        .subscribe {
-            background-color: #f2eda3;
-            @include border-radius(15px 15px 0 0);
-            padding: 12px;
-        }
-        .subscribe-form{
-            max-width: 530px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 10px 0 12px;
-            text-align: center;
-            @include border-radius(3px);
-
-            p{
-                font-size: 14px;
-                font-weight: 800;
-                margin: 0 0 5px;
-            }
-
-            input{
-                width: 240px;
-                height: 33px;
-                line-height: 33px;
-                border: 2px solid #d4d4d4;
-                @include border-radius(3px);
-                background: white;
-                padding: 0 10px;
-                margin-bottom: 10px;
-                @include tablet{
-                    width: 346px;
-                    margin-bottom: 0;
-                }
-            }
-            button{
-                height: 33px;
-                line-height: 30px;
-                border: 2px solid #b3b3b3;
-                @include border-radius(3px);
-                background: #b5b5b5;
-                color: white;
-                font-weight: 700;
-
-                padding: 0 20px;
             }
         }
     }
 
     .copyright{
-        background-color: #988675;
-        color: #fff;
-        .container{
-            padding-top: 20px;
-            padding-bottom: 30px;
-        }
-        a{
-            color: #fbc407;
-            &:hover{
-                text-decoration: underline;
-            }
-        }
-
-        .nav{
-            font-size: 15px;
-            display: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        p{
+            text-align: center;
+            font-size: 13px;
+            margin: 0 0 5px;
             @include tablet{
-                display: block;
-            }
-            @include desktop {
-                float: left;
-            }
-        }
-        li{
-            display: inline-block;
-            &:before{
-                content: '|';
-                display: inline-block;
-                margin: 0 3px;
-            }
-            &:first-child{
-                &:before{
-                    display: none;
-                }
-            }
-        }
-
-        .copy{
-            font-size: 11px;
-            font-weight: 600;
-            @include tablet {
-                margin-top: 15px;
-            }
-            @include desktop {
-                margin-top: 0;
-                float: right;
-                text-align: right;
+                margin: 0 0 10px;
+                font-size: 14px;
             }
         }
     }
-
 }
 
 

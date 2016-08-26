@@ -73,11 +73,14 @@ function dickinsons_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 200, 140 );
 
+	add_image_size('thumb_footer', 90, 90, true);
+
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'dickinsons' ),
 		'sidebar'  => __( 'Blog Sidebar Menu', 'dickinsons' ),
 		'footer'  => __( 'Footer Menu', 'dickinsons' ),
+		'footer_horizontal'  => __( 'Footer Menu (Horizontal)', 'dickinsons' ),
 	) );
 
 	/*
@@ -268,7 +271,7 @@ function dickinsons_content_image_sizes_attr( $sizes, $size ) {
 
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'dickinsons_content_image_sizes_attr', 10 , 2 );
+//add_filter( 'wp_calculate_image_sizes', 'dickinsons_content_image_sizes_attr', 10 , 2 );
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -288,7 +291,7 @@ function dickinsons_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	}
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'dickinsons_post_thumbnail_sizes_attr', 10 , 3 );
+//add_filter( 'wp_get_attachment_image_attributes', 'dickinsons_post_thumbnail_sizes_attr', 10 , 3 );
 
 /**
  * Modifies tag cloud widget arguments to have all tags in the widget same font size.
@@ -351,3 +354,15 @@ function advlink_register_tinymce_javascript( $plugins ) {
 	$plugins['advlink'] = get_template_directory_uri() . '/plugins/advlink/plugin.js';
 	return $plugins;
 }
+
+
+
+function dickinsons_limit_text($text, $limit) {
+	if (str_word_count($text, 0) > $limit) {
+		$words = str_word_count($text, 2);
+		$pos = array_keys($words);
+		$text = substr($text, 0, $pos[$limit]) . '...';
+	}
+	return $text;
+}
+
