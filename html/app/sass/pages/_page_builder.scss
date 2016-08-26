@@ -225,36 +225,37 @@
                 top: 18px;
             }
 
-            &.open ~ .menu-dropdown-selector-container .menu{
+            ~ div{
+                position: relative;
+                .menu{
+                    display: none;
+                    position: absolute;
+                    z-index: 5;
+                    background-color: white;
+                    border: 1px solid #f5efd3;
+                    top: -1px;
+                    left: 15px;
+                    min-width: 245px;
+                }
+                li{
+                    a{
+                        display: block;
+                        text-decoration: none;
+                        padding: 8px 20px;
+                        color: #496074;
+                        &:hover{
+                            background-color: #ebebe6;
+                        }
+                    }
+
+                }
+            }
+
+            &.open ~ div .menu{
                 display: block;
             }
         }
 
-        .menu-dropdown-selector-container{
-            position: relative;
-            .menu{
-                display: none;
-                position: absolute;
-                z-index: 5;
-                background-color: white;
-                border: 1px solid #f5efd3;
-                top: -1px;
-                left: 15px;
-                min-width: 245px;
-            }
-            li{
-                a{
-                    display: block;
-                    text-decoration: none;
-                    padding: 8px 20px;
-                    color: #496074;
-                    &:hover{
-                        background-color: #ebebe6;
-                    }
-                }
-
-            }
-        }
     }
 }
 

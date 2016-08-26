@@ -92,5 +92,18 @@ var DKS = (function(){
 
 $(function(){
     'use strict';
+
+    $('a[target="null"]').removeAttr('target');
+    $(document).on('click', 'a', function(event){
+        var url = $(this).attr('href');
+        if(url && url[0] === '#') {
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: $(url).offset().top - 30
+            }, 500);
+        }
+    });
+
     DKS.init();
 });

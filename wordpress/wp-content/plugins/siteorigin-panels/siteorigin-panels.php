@@ -1055,6 +1055,9 @@ function siteorigin_panels_render( $post_id = false, $enqueue_css = true, $panel
 		$grid_attributes = apply_filters( 'siteorigin_panels_row_attributes', array(
 			'class' => implode( ' ', $grid_classes ),
 			//'id' => !empty($grid_id) ? $grid_id : 'pg-' . $post_id . '-' . $gi,
+
+			'id' => !empty($grid_id) ? $grid_id : '',
+
 		), $panels_data['grids'][$gi] );
 
 		// This allows other themes and plugins to add html before the row
