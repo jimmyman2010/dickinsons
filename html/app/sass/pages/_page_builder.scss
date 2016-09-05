@@ -93,6 +93,10 @@
 
     .siteorigin-widget-tinymce, .textwidget{
         @extend .body;
+        > div{
+            @extend .body;
+            margin-bottom: 0;
+        }
     }
 
 
@@ -264,5 +268,15 @@
     @include tablet {
         opacity: 0;
         @include transition(opacity 0.3s);
+    }
+}
+
+
+.siteorigin-panels-stretch{
+    .container{
+        padding: 0;
+    }
+    .panel-grid-cell{
+        margin-bottom: 0;
     }
 }

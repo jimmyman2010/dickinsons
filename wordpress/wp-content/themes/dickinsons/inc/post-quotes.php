@@ -14,8 +14,8 @@ function ab_arq_random_quote() {
     register_post_type( 'random_quote',
         array(
             'labels' => array(
-                'name' => __( 'Random Quotes' ),
-                'singular_name' => __( 'Random Quote' )
+                'name' => __( 'Testimonials' ),
+                'singular_name' => __( 'Testimonial' )
             ),
             'menu_icon' => 'dashicons-format-quote',
             'public' => true,
