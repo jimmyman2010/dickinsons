@@ -57,30 +57,36 @@ if ( ! function_exists( 'dickinsons_entry_date' ) ) :
  * Prints HTML with date information for current post.
  *
  * Create your own dickinsons_entry_date() function to override in a child theme.
+ * @param id
+ * @param eco
  *
  * @since Twenty Sixteen 1.0
  */
-function dickinsons_entry_date() {
+function dickinsons_entry_date($id = null, $eco = true) {
 	$time_html = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 	$time_string = sprintf( $time_html,
-		esc_attr( get_the_date( 'c' ) ),
-		get_the_date()
+		esc_attr( get_the_date( 'c', $id ) ),
+		get_the_date( '', $id )
 	);
 
 	if(ICL_LANGUAGE_CODE === 'vi') {
-		$date = new DateTime(get_the_date('c'));
+		$date = new DateTime(get_the_date('c', $id));
 
 		$time_string = sprintf( $time_html,
-			esc_attr( get_the_date( 'c' ) ),
+			esc_attr( get_the_date( 'c', $id ) ),
 			$date->format('d/m/Y')
 		);
 
 	}
-	printf('%1$s <span>%2$s</span>',
-		get_option('posted_on_' . ICL_LANGUAGE_CODE),
-		$time_string
-	);
+	if($eco) {
+		printf('%1$s <span>%2$s</span>',
+			get_option('posted_on_' . ICL_LANGUAGE_CODE),
+			$time_string
+		);
+	} else {
+		return $time_string;
+	}
 
 }
 endif;

@@ -215,6 +215,8 @@
             cursor: pointer;
             z-index: 5;
             min-width: 275px;
+            color: inherit;
+            font-family: $font-open;
             &:after{
                 content: '';
                 display: block;
@@ -260,6 +262,44 @@
             }
         }
 
+    }
+
+    .widget-title{
+        font-family: $font-helve;
+        font-weight: normal;
+        color: #0071BC;
+        font-size: 22px;
+        line-height: 1.2;
+        margin: 0 0 20px;
+        @include tablet{
+            font-size: 24px;
+        }
+
+    }
+
+    .widget_recent_entries{
+        li{
+            border-bottom: 1px solid #e7e1cb;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            &:last-child{
+                border-bottom: none;
+            }
+            a{
+                color: #696056;
+            }
+            .post-date{
+                color: #7e716b;
+                display: block;
+                font-size: 85%;
+                margin-top: 7px;
+                &:before{
+                    content: "\f073";
+                    font: $font-awesome;
+                    margin-right: 7px;
+                }
+            }
+        }
     }
 }
 

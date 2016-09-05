@@ -28,6 +28,7 @@ function dickinsons_recent_post(){
                                     <a href="' . get_permalink($recent["ID"]) . '">' . $recent["post_title"] . '</a>
                                 </h4>
                                 <p>' . dickinsons_limit_text($recent["post_excerpt"], 12) . '</p>
+                                <small><i class="fa fa-calendar"></i> ' . dickinsons_entry_date($recent["ID"], false) . '</small>
                             </li>';
     }
 

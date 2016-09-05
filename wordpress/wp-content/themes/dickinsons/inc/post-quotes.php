@@ -61,12 +61,12 @@ function ab_arq_generate() {
     $query = new WP_Query( $args );
 
     // Build output string
-    $quo = '<blockquote><span>"</span>' .
+    $quo = '<div class="body"><blockquote>' .
                 $query->post->post_content .
-            '<span>"</span></blockquote>' .
-            '<p>- ' .
+            '</blockquote>' .
+            '<p><i>' .
                 $query->post->post_title .
-            '</p>';
+            '</i></p></div>';
 
     return $quo;
 }
