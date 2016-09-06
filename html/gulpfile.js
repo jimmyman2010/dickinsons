@@ -63,7 +63,7 @@ gulp.task('html', function() {
     return gulp.src(['.tmp/*.html'])
         .pipe(useref({searchPath: ['app', '.']}))
         .pipe(gulpif('*.min.js', uglify()))
-        .pipe(gulpif('*.min.css', cssnano()))
+        .pipe(gulpif('*.min.css', cssnano({ zindex: false })))
         .pipe(gulp.dest('dist/'));
 });
 
