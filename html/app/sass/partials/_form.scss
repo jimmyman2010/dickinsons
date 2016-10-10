@@ -154,22 +154,20 @@
     display: inline-block;
     outline: none;
     color: #fff !important;
-    height: 32px;
-    line-height: 32px;
-    font-size: 15px;
-    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0 20px;
     cursor: pointer;
     text-align: center;
     letter-spacing: 0.04em;
     border: none;
-    @include border-radius(60px);
+    @include border-radius(50px);
     @include transition(color 0.3s, background-color 0.3s, border-color 0.3s);
     text-decoration: none !important;
-    @include tablet{
-        height: 42px;
-        line-height: 42px;
-        font-size: 18px;
-        padding: 0 25px;
+    min-width: 145px;
+    &:hover{
+        @include opacity(0.9);
     }
 }
 
@@ -185,48 +183,41 @@
 }
 
 .button--large{
-    @include tablet{
-        font-size: 20px;
-        height: 58px;
-        line-height: 58px;
-        padding: 0 40px;
-    }
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 25px;
+}
+
+.button--small{
+    font-size: 11px;
+    height: 25px;
+    line-height: 25px;
 }
 
 .button--red{
     background-color: #bd0009;
-    &:hover{
-        background-color: #e40013;
-    }
 }
 
 .button--yellow{
     background-color: #efbc00;
-    &:hover{
-        background-color: #f6ce2d;;
-    }
 }
 
 .button--blue{
     background-color: #0071bc;
-    &:hover{
-        background-color: #2187BC;
-    }
+}
+
+.button--light-blue{
+    background-color: #4099FF;
 }
 
 .button--gray{
     background-color: #eaeaea;
     color: black;
-    &:hover{
-        background-color: #f4f2f2;
-    }
 }
 
 .button--green{
     background-color: #376400;
-    &:hover{
-        background-color: #467f00;
-    }
 }
 
 .button--none{

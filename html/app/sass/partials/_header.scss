@@ -217,7 +217,7 @@
                     font-size: 15px;
                     float: left;
                     display: block;
-                    padding: 12px 6px;
+                    padding: 12px 10px;
                     border-top: none;
                 }
                 > a{
@@ -425,12 +425,22 @@
                 }
             }
             .shopping-cart{
+                @include desktop{
+                    position: absolute;
+                    right: 6px;
+                    top: 70px;
+                    z-index: 8000;
+                    &:hover{
+                        background: none;
+                    }
+                }
                 a{
                     font-size: 16px;
                     font-weight: 400;
                     padding: 0 11px;
                     color: white !important;
                     background-color: #bd0009 !important;
+                    @include transition(color 0.3s, background-color 0.3s, border-color 0.3s);
                     &:before{
                         content: "\f07a";
                         font: $font-awesome;
@@ -442,6 +452,13 @@
                     }
                     @include desktop{
                         font-size: 14px;
+                        @include border-radius(50px);
+                        height: 45px;
+                        line-height: 45px;
+                        padding: 0 20px;
+                        &:before{
+                            margin-right: 10px;
+                        }
                     }
                 }
             }
@@ -514,7 +531,7 @@
         > .menu-item {
             padding: 6px 0;
             @include desktop {
-                padding: 12px 2px;
+                padding: 12px 5px;
             }
         }
         .blue-label{

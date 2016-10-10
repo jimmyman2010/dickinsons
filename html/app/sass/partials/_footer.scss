@@ -143,6 +143,10 @@
     .footer--info{
         background-color: #f9f3db;
         color: #7e716b;
+
+        .button{
+            text-align: left;
+        }
         .three-column{
             padding: 0 0 40px;
             @extend .clearfix;

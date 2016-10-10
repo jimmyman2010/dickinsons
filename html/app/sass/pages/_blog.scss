@@ -309,6 +309,20 @@
             font-size: 15px;
         }
     }
+    .button{
+        margin: 0 5px 20px;
+        @include tablet{
+            margin-bottom: 10px;
+        }
+    }
+
+    .p-hero, .p-intro{
+        font-size: 17px;
+        @include tablet{
+            font-size: 20px;
+            line-height: 1.4;
+        }
+    }
 }
 
 
