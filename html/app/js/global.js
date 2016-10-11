@@ -105,5 +105,16 @@ $(function(){
         }
     });
 
+    var sliderTestimonials = $('.slider-testimonials');
+    if(sliderTestimonials.length > 0){
+        sliderTestimonials.find('.body').show();
+        sliderTestimonials.slick({
+            autoplay: true,
+            autoplaySpeed: 4000,
+            dots: true,
+            arrows: false
+        });
+    }
+
     DKS.init();
 });

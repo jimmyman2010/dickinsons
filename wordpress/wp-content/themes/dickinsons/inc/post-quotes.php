@@ -55,18 +55,26 @@ function ab_arq_generate() {
     // Retrieve one random quote
     $args = array(
         'post_type' => 'random_quote',
-        'posts_per_page' => 1,
+        'posts_per_page' => 3,
         'orderby' => 'rand'
     );
     $query = new WP_Query( $args );
 
-    // Build output string
-    $quo = '<div class="body"><blockquote>' .
-                $query->post->post_content .
-            '</blockquote>' .
+    $quo = '<div class="slider-testimonials">';
+    foreach($query->posts as $index => $post) {
+        // Build output string
+        $quo .= '<div class="body" ';
+        if($index > 0) {
+            $quo .= 'style="display:none;"';
+        }
+        $quo .= '><blockquote>"' .
+            $post->post_content .
+            '"</blockquote>' .
             '<p><i>' .
-                $query->post->post_title .
+            $post->post_title .
             '</i></p></div>';
+    }
+    $quo .= '</div>';
 
     return $quo;
 }
