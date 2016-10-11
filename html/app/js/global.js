@@ -54,7 +54,6 @@ var DKS = (function(){
 
         fullImage: function(){
             var containerImg = $('.cover .sow-image-container');
-            console.log(containerImg.length);
             containerImg.each(function(){
                 var that = $(this),
                     img = that.children('.so-widget-image');
