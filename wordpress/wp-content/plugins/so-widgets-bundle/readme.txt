@@ -1,9 +1,9 @@
 === SiteOrigin Widgets Bundle ===
 Tags: bundle, widget, button, slider, image, carousel, price table, google maps, tinymce, social links
 Requires at least: 3.9
-Tested up to: 4.5.3
-Stable tag: 1.6.4
-Build time: 2016-07-21T09:52:32+02:00
+Tested up to: 4.6
+Stable tag: 1.7.1
+Build time: 2016-09-21T16:57:15+02:00
 License: GPLv3 or later
 Contributors: gpriday, braam-genis
 
@@ -50,6 +50,27 @@ The SiteOrigin Widgets Bundle is the perfect platform to build widgets for your 
 3. An example of the button widget.
 
 == Changelog ==
+
+= 1.7.1 - 21 September 2016 =
+* Fixed case of Maps widget in sidebar causing an error on pages without that sidebar.
+* Fixed icon field CSS.
+
+= 1.7 - 20 September 2016 =
+* Added mechanism for creating global widget setting.
+* Added mechanism for adding dismissible notices to widget forms.
+* Unified Google Maps JS working for maps widget and contact form location field.
+* Added icon search for icon field.
+* Added remove button to icon field.
+* Contact Form: Fixed clash with Firefox field validation.
+* Properly display remove button after importing Pixabay image.
+
+= 1.6.5 - 15 August 2016 =
+* Fixed dialog z-index.
+* Added field required argument.
+* Properly trigger change for image search import.
+* Sanitize arg can now be a callback.
+* Improved multi checkbox field
+* Maps: Just call initialization function if maps API already loaded.
 
 = 1.6.4 - 21 July 2016 =
 * More settings and customizability for Headline widget.
