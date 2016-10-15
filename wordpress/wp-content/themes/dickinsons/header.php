@@ -27,7 +27,7 @@
 <div id="site-container" class="site-container">
 	<header class="site-header">
 		<div class="container clearfix">
-			<a href="<?= esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?= get_template_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo( 'name' ); ?>" /></a>
+			<a href="<?= esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?= get_template_directory_uri(); ?>/assets/images/logo.jpg" alt="<?php bloginfo( 'name' ); ?>" /></a>
 			<div class="meta-info">
 				<?= get_option('slogan_' . ICL_LANGUAGE_CODE) ?>
 				<div class="language">

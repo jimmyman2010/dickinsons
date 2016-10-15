@@ -11,12 +11,12 @@ function my_settings_enqueue($hook) {
         return;
     }
 
-    wp_enqueue_style( 'my_settings_admin_codemirror_css', get_template_directory_uri() . '/css/codemirror.css', false, VERSION );
-    wp_enqueue_style( 'my_settings_admin_css', get_template_directory_uri() . '/css/admin-style.css', false, VERSION );
+    wp_enqueue_style( 'my_settings_admin_codemirror_css', get_template_directory_uri() . '/assets/css/codemirror.css', false, VERSION );
+    wp_enqueue_style( 'my_settings_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, VERSION );
 
-    wp_enqueue_script( 'my_settings_admin_codemirror_js', get_template_directory_uri() . '/js/codemirror.js', array(), VERSION, true );
-    wp_enqueue_script( 'my_settings_admin_xml_js', get_template_directory_uri() . '/js/xml.js', array(), VERSION, true );
-    wp_enqueue_script( 'my_settings_admin_js', get_template_directory_uri() . '/js/codestyle.js', array('my_settings_admin_codemirror_js', 'my_settings_admin_xml_js'), VERSION, true );
+    wp_enqueue_script( 'my_settings_admin_codemirror_js', get_template_directory_uri() . '/assets/js/codemirror.js', array(), VERSION, true );
+    wp_enqueue_script( 'my_settings_admin_xml_js', get_template_directory_uri() . '/assets/js/xml.js', array(), VERSION, true );
+    wp_enqueue_script( 'my_settings_admin_js', get_template_directory_uri() . '/assets/js/codestyle.js', array('my_settings_admin_codemirror_js', 'my_settings_admin_xml_js'), VERSION, true );
 
 }
 add_action( 'admin_enqueue_scripts', 'my_settings_enqueue' );
