@@ -65,6 +65,22 @@ CodeMirror.fromTextArea(document.getElementById('our_products_vi'), {
 
 
 
+CodeMirror.fromTextArea(document.getElementById('subscribe_en'), {
+    lineNumbers: true,
+    lineWrapping: true,
+    mode: 'xml',
+    htmlMode: true
+});
+
+CodeMirror.fromTextArea(document.getElementById('subscribe_vi'), {
+    lineNumbers: true,
+    lineWrapping: true,
+    mode: 'xml',
+    htmlMode: true
+});
+
+
+
 
 CodeMirror.fromTextArea(document.getElementById('connect_with_us_en'), {
     lineNumbers: true,

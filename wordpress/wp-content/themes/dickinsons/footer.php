@@ -21,13 +21,7 @@
 		<div class="bar"></div>
 		<section class="socials-network">
 			<div class="container">
-				<p class="copy"><?= get_option('connect_with_us_' . ICL_LANGUAGE_CODE) ?></p>
-				<p class="socials">
-					<a target="_blank" href="https://www.instagram.com/dickinsonsvn/"><i class="fa fa-instagram"></i></a>
-					<a target="_blank" href="https://www.facebook.com/dickinsonsvn/"><i class="fa fa-facebook"></i></a>
-					<a target="_blank" href="https://twitter.com/DickinsonsAsia"><i class="fa fa-twitter"></i></a>
-					<a target="_blank" href="#"><i class="fa fa-skype"></i></a>
-				</p>
+				<?= get_option('connect_with_us_' . ICL_LANGUAGE_CODE) ?>
 				<?php
 				if ( has_nav_menu( 'footer_horizontal' ) ) {
 					wp_nav_menu( array(
