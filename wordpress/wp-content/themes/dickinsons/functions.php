@@ -352,7 +352,7 @@ function advlink_register_buttons( $buttons ) {
 add_filter( 'mce_external_plugins', 'advlink_register_tinymce_javascript' );
 
 function advlink_register_tinymce_javascript( $plugins ) {
-	$plugins['advlink'] = get_template_directory_uri() . '/assets/plugins/advlink/plugin.js';
+	$plugins['advlink'] = get_template_directory_uri() . '/plugins/advlink/plugin.js';
 	return $plugins;
 }
 
