@@ -243,8 +243,10 @@
                         padding: 10px;
                     }
                 }
+
                 .sub-menu{
                     font-weight: 400;
+                    padding: 0 10px;
                     height: 0;
                     overflow: hidden;
                     @include border-radius(0 0 10px 10px);

@@ -226,9 +226,10 @@
                         margin: 0;
                         font-weight: 600;
                         @include desktop {
-                            padding-right: 120px;
+                            padding-right: 150px;
                         }
                     }
+
                     .published-date {
                         margin-top: 5px;
                         @include desktop {
