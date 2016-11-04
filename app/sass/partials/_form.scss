@@ -154,10 +154,10 @@
     display: inline-block;
     outline: none;
     color: #fff !important;
-    height: 30px;
-    line-height: 30px;
-    font-size: 12px;
-    padding: 0 20px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    padding: 0 25px;
     cursor: pointer;
     text-align: center;
     letter-spacing: 0.04em;
@@ -165,7 +165,7 @@
     @include border-radius(50px);
     @include transition(color 0.3s, background-color 0.3s, border-color 0.3s);
     text-decoration: none !important;
-    min-width: 145px;
+    min-width: 155px;
     &:hover{
         @include opacity(0.9);
     }
@@ -181,7 +181,7 @@
         }
     }
 }
-
+/*
 .button--large{
     font-size: 14px;
     height: 45px;
@@ -193,6 +193,13 @@
     font-size: 11px;
     height: 25px;
     line-height: 25px;
+}
+*/
+.button--small{
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
 }
 
 .button--red{
