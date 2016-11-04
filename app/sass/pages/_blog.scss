@@ -275,6 +275,20 @@
         font-family: $font-helve;
         font-weight: normal;
         color: #0071BC;
+        b, strong{
+            font-family: $font-helve-normal;
+            font-weight: normal;
+            i, em{
+                font-family: $font-helve-normal-i;
+            }
+        }
+        i, em{
+            font-family: $font-helve-i;
+            font-style: normal;
+            b, strong{
+                font-family: $font-helve-normal-i;
+            }
+        }
     }
 
     h1{

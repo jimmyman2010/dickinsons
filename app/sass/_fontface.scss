@@ -1,5 +1,6 @@
 $url: "../fonts";
 
+
 @font-face {
     font-family: "Monarcha W01 Book";
     src: url("#{$url}/006a6b206d6200e0cedf4f4c9c963c58.eot"); /* IE9*/
@@ -13,10 +14,45 @@ $url: "../fonts";
 }
 
 @font-face {
-    font-family: 'helvetica_neueregular';
-    src: url('#{$url}/helveticaneuelight-webfont.woff2') format('woff2'),
-    url('#{$url}/helveticaneuelight-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: "Helvetica_Neue";
+    src: url("#{$url}/helveticaneue.eot"); /* IE9 */
+    src: url("#{$url}/helveticaneue.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("#{$url}/helveticaneue.woff") format("woff"), /* chrome, firefox */
+    url("#{$url}/helveticaneue.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("#{$url}/helveticaneue.svg#Helvetica Neue") format("svg"); /* iOS 4.1- */
     font-style: normal;
+    font-weight: normal;
+}
 
+@font-face {
+    font-family: "Helvetica_Neue_Light";
+    src: url("#{$url}/helveticaneuelight.eot"); /* IE9 */
+    src: url("#{$url}/helveticaneuelight.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("#{$url}/helveticaneuelight.woff") format("woff"), /* chrome, firefox */
+    url("#{$url}/helveticaneuelight.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("#{$url}/helveticaneuelight.svg#Helvetica Neue") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Helvetica_Neue_Italic";
+    src: url("#{$url}/helveticaneueitalic.eot"); /* IE9 */
+    src: url("#{$url}/helveticaneueitalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("#{$url}/helveticaneueitalic.woff") format("woff"), /* chrome, firefox */
+    url("#{$url}/helveticaneueitalic.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("#{$url}/helveticaneueitalic.svg#Helvetica Neue") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Helvetica_Neue_Light_Italic";
+    src: url("#{$url}/helveticaneuelightitalic.eot"); /* IE9 */
+    src: url("#{$url}/helveticaneuelightitalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("#{$url}/helveticaneuelightitalic.woff") format("woff"), /* chrome, firefox */
+    url("#{$url}/helveticaneuelightitalic.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("#{$url}/helveticaneuelightitalic.svg#Helvetica Neue") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
 }
