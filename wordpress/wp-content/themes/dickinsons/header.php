@@ -13,6 +13,10 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" href="<?= get_template_directory_uri() ?>/assets/favicon.png">
+	<link rel="shortcut icon" href="<?= get_template_directory_uri() ?>/assets/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="<?= get_template_directory_uri() ?>/assets/favicon.ico" type="image/x-icon">
+
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=David+Libre:700&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
 
