@@ -73,6 +73,12 @@
             margin: 2px 2px 2px 8px;
             a{
                 color: #42403a;
+                &:hover{
+                    text-decoration: none;
+                    @include tablet{
+                        text-decoration: underline;
+                    }
+                }
             }
             .lang_sel_sel{
                 display: none;
